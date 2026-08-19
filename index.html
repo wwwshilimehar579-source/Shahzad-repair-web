@@ -2,13 +2,13 @@
 <html lang="ar" dir="rtl" id="htmlTag">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title class="i18n" data-ar="العهد كولنج سنتر | Al Ahad Cooling Center - Riyadh" data-en="Al Ahad Cooling Center | AC Services Riyadh">العهد كولنج سنتر | Al Ahad Cooling Center - Riyadh</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title class="i18n" data-ar="العهد كولنج سنتر" data-en="Al Ahad Cooling Center">العهد كولنج سنتر</title>
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Animate.css for smooth animations -->
+    <!-- Animate.css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     
     <style>
@@ -19,741 +19,429 @@
             --light-bg: #F4F7FA;
             --white: #FFFFFF;
             --text-dark: #333333;
-            --transition: all 0.3s ease;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Cairo', 'Poppins', sans-serif;
+            font-family: 'Cairo', sans-serif;
         }
 
+        /* Mobile Container View */
         body {
-            background-color: var(--light-bg);
-            color: var(--text-dark);
-            line-height: 1.6;
-            scroll-behavior: smooth;
+            background-color: #111;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
         }
 
-        a {
-            text-decoration: none;
-            color: inherit;
+        .mobile-frame {
+            width: 100%;
+            max-width: 430px;
+            height: 100vh;
+            max-height: 900px;
+            background: var(--light-bg);
+            overflow-y: auto;
+            position: relative;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+            border-radius: 0px;
         }
 
-        /* Language Switcher Floating Button */
+        @media (min-width: 481px) {
+            .mobile-frame {
+                border-radius: 30px;
+                border: 10px solid #222;
+            }
+        }
+
+        /* Small Language Switcher Button */
         .lang-switcher-btn {
-            position: fixed;
-            top: 15px;
-            left: 15px;
+            position: absolute;
+            top: 10px;
+            left: 10px;
             z-index: 2000;
-            background: var(--gold-accent);
-            color: var(--primary-blue);
-            padding: 8px 15px;
-            border-radius: 20px;
+            background: var(--primary-blue);
+            color: var(--gold-accent);
+            padding: 4px 10px;
+            border-radius: 12px;
             font-weight: 700;
-            border: none;
+            font-size: 11px;
+            border: 1px solid var(--gold-accent);
             cursor: pointer;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-            transition: var(--transition);
-        }
-        .lang-switcher-btn:hover {
-            transform: scale(1.05);
         }
 
         /* Top Bar */
         .top-bar {
             background: var(--primary-blue);
             color: var(--white);
-            padding: 8px 5%;
+            padding: 6px 15px;
+            font-size: 11px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-size: 14px;
         }
 
-        .top-bar .contact-info span {
-            margin-left: 20px;
-        }
-
-        .top-bar i {
-            color: var(--cyan-accent);
-            margin-left: 5px;
-        }
-
-        /* Header / Navbar */
+        /* Header */
         header {
             background: var(--white);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            padding: 12px 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
             position: sticky;
             top: 0;
             z-index: 1000;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 5%;
         }
 
         .logo {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
         }
 
         .logo i {
-            font-size: 30px;
+            font-size: 22px;
             color: var(--cyan-accent);
         }
 
         .logo h1 {
-            font-size: 22px;
+            font-size: 15px;
             color: var(--primary-blue);
-            font-weight: 950;
+            font-weight: 900;
         }
 
         .logo span {
             display: block;
-            font-size: 12px;
+            font-size: 9px;
             color: #666;
-            font-weight: 600;
         }
 
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 25px;
-            align-items: center;
-        }
-
-        nav a {
-            font-weight: 600;
+        .header-btn {
+            background: var(--cyan-accent);
             color: var(--primary-blue);
-            transition: var(--transition);
-        }
-
-        nav a:hover {
-            color: var(--cyan-accent);
-        }
-
-        .cta-btn {
-            background: linear-gradient(135deg, var(--cyan-accent), #0088cc);
-            color: var(--white);
-            padding: 10px 20px;
-            border-radius: 30px;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 11px;
             font-weight: 700;
-            box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
-            transition: var(--transition);
-        }
-
-        .cta-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0, 212, 255, 0.5);
+            text-decoration: none;
         }
 
         /* Hero Section */
         .hero {
             background: linear-gradient(135deg, var(--primary-blue), #13385c);
             color: var(--white);
-            padding: 80px 5%;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
+            padding: 30px 20px;
+            text-align: center;
         }
 
-        .hero-content h2 {
-            font-size: 42px;
+        .hero h2 {
+            font-size: 22px;
             font-weight: 900;
-            margin-bottom: 20px;
-            line-height: 1.2;
+            margin-bottom: 10px;
+            line-height: 1.3;
         }
 
-        .hero-content h2 span {
+        .hero h2 span {
             color: var(--gold-accent);
         }
 
-        .hero-content p {
-            font-size: 18px;
-            margin-bottom: 30px;
+        .hero p {
+            font-size: 13px;
+            margin-bottom: 20px;
             opacity: 0.9;
         }
 
         .hero-btns {
             display: flex;
-            gap: 15px;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .btn-main {
+            background: var(--cyan-accent);
+            color: var(--primary-blue);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 12px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
         }
 
         .btn-whatsapp {
             background: #25D366;
             color: white;
-            padding: 12px 25px;
-            border-radius: 30px;
+            padding: 8px 16px;
+            border-radius: 20px;
             font-weight: 700;
-            display: flex;
+            font-size: 12px;
+            text-decoration: none;
+            display: inline-flex;
             align-items: center;
-            gap: 8px;
-            transition: var(--transition);
-        }
-
-        .btn-whatsapp:hover {
-            background: #20ba5a;
-        }
-
-        .hero-trust {
-            margin-top: 30px;
-            display: flex;
-            gap: 20px;
-            font-size: 14px;
-            font-weight: 600;
-        }
-
-        .hero-trust i {
-            color: var(--gold-accent);
-        }
-
-        .hero-card {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 30px;
-            border-radius: 15px;
-            backdrop-filter: blur(10px);
-            text-align: center;
-        }
-
-        .hero-card i {
-            font-size: 60px;
-            color: var(--cyan-accent);
-            margin-bottom: 15px;
+            gap: 5px;
         }
 
         /* Section Styling */
         section {
-            padding: 70px 5%;
+            padding: 25px 15px;
         }
 
         .section-title {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 20px;
         }
 
         .section-title h2 {
-            font-size: 32px;
+            font-size: 18px;
             color: var(--primary-blue);
             font-weight: 800;
-            margin-bottom: 10px;
+            margin-bottom: 5px;
         }
 
         .section-title p {
             color: #666;
-            font-size: 16px;
-        }
-
-        /* Why Choose Us */
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 25px;
-        }
-
-        .feature-box {
-            background: var(--white);
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-            text-align: center;
-            transition: var(--transition);
-            border-bottom: 4px solid var(--cyan-accent);
-        }
-
-        .feature-box:hover {
-            transform: translateY(-5px);
-        }
-
-        .feature-box i {
-            font-size: 40px;
-            color: var(--primary-blue);
-            margin-bottom: 20px;
-        }
-
-        .feature-box h3 {
-            font-size: 18px;
-            margin-bottom: 10px;
-            color: var(--primary-blue);
+            font-size: 11px;
         }
 
         /* Services Grid */
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 25px;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
         }
 
         .service-card {
             background: var(--white);
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            padding: 30px;
-            border-top: 4px solid var(--gold-accent);
-            transition: var(--transition);
-        }
-        .service-card:hover {
-            transform: translateY(-5px);
+            padding: 15px 10px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            border-top: 3px solid var(--gold-accent);
+            text-align: center;
         }
 
         .service-card h3 {
-            font-size: 20px;
+            font-size: 13px;
             color: var(--primary-blue);
-            margin-bottom: 15px;
+            margin-bottom: 5px;
         }
 
-        /* Gallery / Images Section */
+        .service-card p {
+            font-size: 10px;
+            color: #666;
+        }
+
+        /* Gallery Section (Your exact images) */
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 25px;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
         }
 
         .img-card {
             background: var(--white);
-            padding: 15px;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.06);
-            transition: var(--transition);
-        }
-
-        .img-card:hover {
-            transform: translateY(-5px);
+            padding: 8px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            text-align: center;
         }
 
         .img-card img {
             width: 100%;
-            height: 200px;
+            height: 110px;
             object-fit: cover;
-            border-radius: 10px;
+            border-radius: 6px;
         }
 
         .caption {
-            text-align: center;
+            font-size: 11px;
             font-weight: bold;
-            margin-top: 15px;
+            margin-top: 6px;
             color: var(--primary-blue);
-            font-size: 16px;
         }
 
-        /* Brands Section */
-        .brands-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            background: var(--white);
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
-        }
-
-        .brand-badge {
-            background: var(--light-bg);
-            padding: 12px 25px;
-            border-radius: 8px;
-            font-weight: 700;
-            color: var(--primary-blue);
-            border: 1px solid #e1e8ed;
-        }
-
-        /* Process Steps */
-        .process-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
-
-        .process-step {
-            background: var(--white);
-            padding: 35px 25px;
-            border-radius: 15px;
-            position: relative;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        }
-
-        .step-number {
-            position: absolute;
-            top: -20px;
-            right: 25px;
-            background: var(--cyan-accent);
-            color: var(--primary-blue);
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 900;
-            font-size: 18px;
-            box-shadow: 0 4px 10px rgba(0,212,255,0.4);
-        }
-
-        .process-step h3 {
-            margin-top: 10px;
-            color: var(--primary-blue);
-            margin-bottom: 10px;
-        }
-
-        /* Reviews & Stats Section */
+        /* Reviews & Stats */
         .reviews-section {
             background: linear-gradient(135deg, var(--primary-blue), #13385c);
             color: white;
             text-align: center;
-            padding: 60px 5%;
+            padding: 30px 15px;
         }
 
         .stats-container {
             display: flex;
-            justify-content: center;
-            gap: 60px;
-            margin-top: 30px;
-            flex-wrap: wrap;
-        }
-
-        .stat-box {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 25px 40px;
-            border-radius: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            justify-content: space-around;
+            margin-top: 15px;
         }
 
         .stat-number {
-            font-size: 36px;
+            font-size: 20px;
             font-weight: 900;
             color: var(--gold-accent);
-            margin-bottom: 5px;
         }
 
         .stat-label {
-            font-size: 16px;
+            font-size: 10px;
             opacity: 0.9;
         }
 
         /* Contact Section */
         .contact-box {
-            background: linear-gradient(135deg, var(--primary-blue), #13385c);
-            color: var(--white);
-            padding: 50px;
-            border-radius: 20px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
+            background: var(--white);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            text-align: center;
         }
 
-        .contact-info-item {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 20px;
-            font-size: 18px;
+        .contact-item {
+            font-size: 13px;
+            margin-bottom: 10px;
+            color: var(--primary-blue);
+            font-weight: bold;
         }
 
-        .contact-info-item i {
+        .contact-item i {
             color: var(--cyan-accent);
-            font-size: 24px;
+            margin-left: 5px;
         }
 
-        /* Floating Buttons */
-        .floating-buttons {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            z-index: 999;
-        }
-
-        .float-btn {
-            width: 55px;
-            height: 55px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 24px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            transition: var(--transition);
-        }
-
-        .float-whatsapp { background: #25D366; }
-        .float-call { background: var(--cyan-accent); color: var(--primary-blue); }
-
-        .float-btn:hover {
-            transform: scale(1.1);
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .hero, .contact-box {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-            .hero-btns, .hero-trust {
-                justify-content: center;
-            }
-            nav ul {
-                display: none;
-            }
-            .top-bar {
-                flex-direction: column;
-                gap: 5px;
-                text-align: center;
-            }
+        /* Footer bottom spacing */
+        .footer-space {
+            height: 40px;
         }
     </style>
 </head>
 <body>
 
-    <!-- Language Switcher Button -->
-    <button class="lang-switcher-btn" onclick="toggleLanguage()">English / العربية</button>
+    <div class="mobile-frame">
+        
+        <!-- Small Language Switcher Button -->
+        <button class="lang-switcher-btn" onclick="toggleLanguage()">EN / AR</button>
 
-    <!-- Top Bar -->
-    <div class="top-bar">
-        <div class="contact-info">
+        <!-- Top Bar -->
+        <div class="top-bar">
             <span><i class="fas fa-phone-alt"></i> 0540641082</span>
-            <span><i class="fas fa-map-marker-alt"></i> <span class="i18n" data-ar="الرياض، المملكة العربية السعودية" data-en="Riyadh, Saudi Arabia">الرياض، المملكة العربية السعودية</span></span>
+            <span class="i18n" data-ar="الرياض" data-en="Riyadh">الرياض</span>
         </div>
-        <div class="i18n" data-ar="خدمة صيانة وإصلاح المكيفات في الرياض" data-en="AC Maintenance & Repair Services in Riyadh">خدمة صيانة وإصلاح المكيفات في الرياض</div>
-    </div>
 
-    <!-- Header -->
-    <header class="animate__animated animate__fadeInDown">
-        <div class="logo">
-            <i class="fas fa-snowflake"></i>
-            <div>
-                <h1>العهد كولنج سنتر</h1>
-                <span>Al Ahad Cooling Center</span>
+        <!-- Header -->
+        <header>
+            <div class="logo">
+                <i class="fas fa-snowflake"></i>
+                <div>
+                    <h1>العهد كولنج</h1>
+                    <span>Al Ahad Cooling</span>
+                </div>
             </div>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#services" class="i18n" data-ar="الخدمات" data-en="Services">الخدمات</a></li>
-                <li><a href="#gallery" class="i18n" data-ar="معرض الصور" data-en="Gallery">معرض الصور</a></li>
-                <li><a href="#why-us" class="i18n" data-ar="لماذا نحن" data-en="Why Us">لماذا نحن</a></li>
-                <li><a href="#contact" class="cta-btn i18n" data-ar="اتصل بنا فوراً" data-en="Contact Now">اتصل بنا فوراً</a></li>
-            </ul>
-        </nav>
-    </header>
+            <a href="tel:0540641082" class="header-btn i18n" data-ar="اتصل بنا" data-en="Call">اتصل بنا</a>
+        </header>
 
-    <!-- Hero Section -->
-    <section class="hero animate__animated animate__fadeIn">
-        <div class="hero-content">
-            <h2 class="i18n" data-ar="خدمات تكييف الهواء الاحترافية في <span>الرياض</span>" data-en="Professional AC Services in <span>Riyadh</span>">خدمات تكييف الهواء الاحترافية في <span>الرياض</span></h2>
-            <p class="i18n" data-ar="حلول شاملة لجميع أعطال المكيفات مع فنيين خبراء، خدمة فورية في نفس اليوم، وضمان على كافة أعمال الصيانة والتركيب." data-en="Comprehensive solutions for all AC faults with expert technicians, same-day service, and warranty on all maintenance work.">حلول شاملة لجميع أعطال المكيفات مع فنيين خبراء، خدمة فورية في نفس اليوم، وضمان على كافة أعمال الصيانة والتركيب.</p>
+        <!-- Hero Section -->
+        <section class="hero">
+            <h2 class="i18n" data-ar="خدمات تكييف الهواء في <span>الرياض</span>" data-en="AC Services in <span>Riyadh</span>">خدمات تكييف الهواء في <span>الرياض</span></h2>
+            <p class="i18n" data-ar="صيانة وإصلاح المكيفات بمهارة عالية وسرعة فائقة." data-en="Maintenance and repair of ACs with high skill and speed.">صيانة وإصلاح المكيفات بمهارة عالية وسرعة فائقة.</p>
             <div class="hero-btns">
-                <a href="tel:0540641082" class="cta-btn"><i class="fas fa-phone"></i> <span class="i18n" data-ar="اتصل الآن" data-en="Call Now">اتصل الآن</span></a>
+                <a href="tel:0540641082" class="btn-main"><i class="fas fa-phone"></i> <span class="i18n" data-ar="اتصل" data-en="Call">اتصل</span></a>
                 <a href="https://wa.me/966540641082" class="btn-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i> <span class="i18n" data-ar="واتساب" data-en="WhatsApp">واتساب</span></a>
             </div>
-            <div class="hero-trust">
-                <span><i class="fas fa-check-circle"></i> <span class="i18n" data-ar="فنيين معتمدين" data-en="Certified Techs">فنيين معتمدين</span></span>
-                <span><i class="fas fa-check-circle"></i> <span class="i18n" data-ar="خدمة سريعة نفس اليوم" data-en="Same-Day Service">خدمة سريعة نفس اليوم</span></span>
-            </div>
-        </div>
-        <div class="hero-card">
-            <i class="fas fa-tools"></i>
-            <h3 class="i18n" data-ar="الصيانة الفورية للمكيفات" data-en="Instant AC Maintenance">الصيانة الفورية للمكيفات</h3>
-            <p class="i18n" data-ar="جاهزون لخدمتكم طوال أيام الأسبوع في مختلف أحياء الرياض." data-en="Ready to serve you 7 days a week across all Riyadh districts.">جاهزون لخدمتكم طوال أيام الأسبوع في مختلف أحياء الرياض.</p>
-        </div>
-    </section>
+        </section>
 
-    <!-- Why Choose Us -->
-    <section id="why-us">
-        <div class="section-title">
-            <h2 class="i18n" data-ar="لماذا تختار العهد كولنج سنتر؟" data-en="Why Choose Al Ahad Cooling Center?">لماذا تختار العهد كولنج سنتر؟</h2>
-            <p class="i18n" data-ar="نتميز بالجودة والاحترافية لكسب ثقة عملائنا في الرياض" data-en="We stand out with quality and professionalism to earn our clients' trust in Riyadh">نتميز بالجودة والاحترافية لكسب ثقة عملائنا في الرياض</p>
-        </div>
-        <div class="features-grid">
-            <div class="feature-box">
-                <i class="fas fa-award"></i>
-                <h3 class="i18n" data-ar="جودة عالية" data-en="High Quality">جودة عالية</h3>
-                <p class="i18n" data-ar="نضمن لك أعلى معايير الجودة في كافة أعمال الصيانة والإصلاح." data-en="We guarantee the highest quality standards in all maintenance and repair works.">نضمن لك أعلى معايير الجودة في كافة أعمال الصيانة والإصلاح.</p>
+        <!-- Services -->
+        <section>
+            <div class="section-title">
+                <h2 class="i18n" data-ar="خدماتنا الأساسية" data-en="Our Services">خدماتنا الأساسية</h2>
+                <p class="i18n" data-ar="حلول سريعة لجميع مشاكل التبريد" data-en="Quick solutions for cooling issues">حلول سريعة لجميع مشاكل التبريد</p>
             </div>
-            <div class="feature-box">
-                <i class="fas fa-bolt"></i>
-                <h3 class="i18n" data-ar="خدمة نفس اليوم" data-en="Same-Day Service">خدمة نفس اليوم</h3>
-                <p class="i18n" data-ar="نصل إليك فوراً في نفس اليوم لحل مشاكل التبريد لديك." data-en="We reach you immediately on the same day to solve your cooling issues.">نصل إليك فوراً في نفس اليوم لحل مشاكل التبريد لديك.</p>
-            </div>
-            <div class="feature-box">
-                <i class="fas fa-users-cog"></i>
-                <h3 class="i18n" data-ar="فنيين خبراء" data-en="Expert Technicians">فنيين خبراء</h3>
-                <p class="i18n" data-ar="فريق فني محترف ومدرب على أحدث تقنيات التكييف." data-en="A professional technical team trained in the latest air conditioning technologies.">فريق فني محترف ومدرب على أحدث تقنيات التكييف.</p>
-            </div>
-            <div class="feature-box">
-                <i class="fas fa-check-double"></i>
-                <h3 class="i18n" data-ar="دعم كافة الماركات" data-en="All Brands Support">دعم كافة الماركات</h3>
-                <p class="i18n" data-ar="خبرة واسعة في التعامل مع جميع أنواع وماركات المكيفات العالمية." data-en="Extensive experience in dealing with all types and brands of global air conditioners.">خبرة واسعة في التعامل مع جميع أنواع وماركات المكيفات العالمية.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" style="background: #fff;">
-        <div class="section-title">
-            <h2 class="i18n" data-ar="خدماتنا والأعطال التي نصلحها" data-en="Our Services & Repaired Faults">خدماتنا والأعطال التي نصلحها</h2>
-            <p class="i18n" data-ar="حلول دقيقة لكل مشكلة تواجه مكيفك" data-en="Precise solutions for every problem your AC faces">حلول دقيقة لكل مشكلة تواجه مكيفك</p>
-        </div>
-        <div class="services-grid">
-            <div class="service-card">
-                <h3 class="i18n" data-ar="ضعف التبريد" data-en="Cooling Drop">ضعف التبريد</h3>
-                <p class="i18n" data-ar="فحص وضبط كفاءة التبريد وإعادة تدفق الهواء البارد بكامل طاقتة." data-en="Inspection and adjustment of cooling efficiency and restoring cold air flow.">فحص وضبط كفاءة التبريد وإعادة تدفق الهواء البارد بكامل طاقتة.</p>
-            </div>
-            <div class="service-card">
-                <h3 class="i18n" data-ar="تسريب الغاز (الفريون)" data-en="Gas (Freon) Leakage">تسريب الغاز (الفريون)</h3>
-                <p class="i18n" data-ar="الكشف عن مواقع التسريب بدقة واعادة شحن الفريون الأصلي." data-en="Detecting leak locations accurately and recharging original Freon.">الكشف عن مواقع التسريب بدقة واعادة شحن الفريون الأصلي.</p>
-            </div>
-            <div class="service-card">
-                <h3 class="i18n" data-ar="تسريب المياه" data-en="Water Leakage">تسريب المياه</h3>
-                <p class="i18n" data-ar="تسليك أنابيب الصرف ومنع تجمع وتطاير المياه داخل المكان." data-en="Clearing drainage pipes and preventing water accumulation inside.">تسليك أنابيب الصرف ومنع تجمع وتطاير المياه داخل المكان.</p>
-            </div>
-            <div class="service-card">
-                <h3 class="i18n" data-ar="أعطال الكمبريسور والكهرباء" data-en="Compressor & Electrical Faults">أعطال الكمبريسور والكهرباء</h3>
-                <p class="i18n" data-ar="إصلاح الفولت، الأسلاك، وفحص كفاءة الكمبريسور لضمان استمرارية العمل." data-en="Repairing voltage, wiring, and checking compressor efficiency.">إصلاح الفولت، الأسلاك، وفحص كفاءة الكمبريسور لضمان استمرارية العمل.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Gallery / Real Images Section with Captions -->
-    <section id="gallery">
-        <div class="section-title">
-            <h2 class="i18n" data-ar="معرض أعمالنا الميدانية" data-en="Our Field Work Gallery">معرض أعمالنا الميدانية</h2>
-            <p class="i18n" data-ar="لقطات حية من خدمات الصيانة والتركيب التي نفخر بتقديمها" data-en="Live snapshots of maintenance and installation services we provide">لقطات حية من خدمات الصيانة والتركيب التي نفخر بتقديمها</p>
-        </div>
-        <div class="gallery-grid">
-            <div class="img-card animate__animated animate__fadeInUp">
-                <img src="1000350039.webp" alt="Service">
-                <p class="caption i18n" data-ar="فحص فني دقيق واحترافي" data-en="Precise & Professional Technical Inspection">فحص فني دقيق واحترافي</p>
-            </div>
-            <div class="img-card animate__animated animate__fadeInUp">
-                <img src="1000350027.png" alt="Cleaning">
-                <p class="caption i18n" data-ar="تنظيف عميق لوحدات التكييف" data-en="Deep Cleaning for AC Units">تنظيف عميق لوحدات التكييف</p>
-            </div>
-            <div class="img-card animate__animated animate__fadeInUp">
-                <img src="1000350035.jpg" alt="Electrical">
-                <p class="caption i18n" data-ar="صيانة المكونات الكهربائية والقياس" data-en="Electrical Components & Measurement Maintenance">صيانة المكونات الكهربائية والقياس</p>
-            </div>
-            <div class="img-card animate__animated animate__fadeInUp">
-                <img src="1000350033.jpg" alt="Outdoor Unit">
-                <p class="caption i18n" data-ar="خدمة ووحدات التكييف الخارجية" data-en="Outdoor AC Units Service">خدمة ووحدات التكييف الخارجية</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Reviews & Statistics Section -->
-    <section class="reviews-section">
-        <h2 class="i18n" data-ar="ماذا يقول عملاؤنا عنا في الرياض" data-en="What Our Clients Say About Us">ماذا يقول عملاؤنا عنا في الرياض</h2>
-        <p class="i18n" data-ar="ثقة متبادلة وبناء مستمر لرضا عملائنا الكرام" data-en="Mutual trust and continuous commitment to customer satisfaction">ثقة متبادلة وبناء مستمر لرضا عملائنا الكرام</p>
-        <div class="stats-container">
-            <div class="stat-box">
-                <div class="stat-number">1.1K+</div>
-                <div class="stat-label i18n" data-ar="تقييمات العملاء" data-en="Client Reviews">تقييمات العملاء</div>
-            </div>
-            <div class="stat-box">
-                <div class="stat-number">1 Million+</div>
-                <div class="stat-label i18n" data-ar="عملاء راضون عن خدماتنا" data-en="Satisfied Customers">عملاء راضون عن خدماتنا</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Brands Section -->
-    <section>
-        <div class="section-title">
-            <h2 class="i18n" data-ar="العلامات التجارية التي نخدمها" data-en="Brands We Service">العلامات التجارية التي نخدمها</h2>
-            <p class="i18n" data-ar="ندعم جميع الأنواع والماركات الشهيرة في السوق السعودي" data-en="We support all famous brands in the Saudi market">ندعم جميع الأنواع والماركات الشهيرة في السوق السعودي</p>
-        </div>
-        <div class="brands-container">
-            <div class="brand-badge">Gree</div>
-            <div class="brand-badge">Carrier</div>
-            <div class="brand-badge">Hisense</div>
-            <div class="brand-badge">Hitachi</div>
-            <div class="brand-badge">LG</div>
-            <div class="brand-badge">Midea</div>
-            <div class="brand-badge">Panasonic</div>
-            <div class="brand-badge">TCL</div>
-            <div class="brand-badge">Toshiba</div>
-            <div class="brand-badge">Haier</div>
-        </div>
-    </section>
-
-    <!-- Service Process -->
-    <section style="background: #fff;">
-        <div class="section-title">
-            <h2 class="i18n" data-ar="طريقة العمل في 3 خطوات سهلة" data-en="Service Process in 3 Easy Steps">طريقة العمل في 3 خطوات سهلة</h2>
-            <p class="i18n" data-ar="خطوات بسيطة وسريعة للحصول على أفضل خدمة" data-en="Simple and quick steps to get the best service">خطوات بسيطة وسريعة للحصول على أفضل خدمة</p>
-        </div>
-        <div class="process-grid">
-            <div class="process-step">
-                <div class="step-number">01</div>
-                <h3 class="i18n" data-ar="حجز الخدمة" data-en="Booking Service">حجز الخدمة</h3>
-                <p class="i18n" data-ar="تواصل معنا عبر الهاتف أو الواتساب لتحديد موعد الزيارة المناسب لك." data-en="Contact us via phone or WhatsApp to schedule a convenient visit.">تواصل معنا عبر الهاتف أو الواتساب لتحديد موعد الزيارة المناسب لك.</p>
-            </div>
-            <div class="process-step">
-                <div class="step-number">02</div>
-                <h3 class="i18n" data-ar="الفحص الشامل" data-en="Professional Diagnosis">الفحص الشامل</h3>
-                <p class="i18n" data-ar="يقوم الفني بفحص المكيف بدقة لتحديد العطل بدقة واحترافية." data-en="Our technician thoroughly inspects the AC to identify the issue.">يقوم الفني بفحص المكيف بدقة لتحديد العطل بدقة واحترافية.</p>
-            </div>
-            <div class="process-step">
-                <div class="step-number">03</div>
-                <h3 class="i18n" data-ar="الإصلاح والاختبار" data-en="Repair & Testing">الإصلاح والاختبار</h3>
-                <p class="i18n" data-ar="إجراء الإصلاحات اللازمة واختبار تبريد المكيف لضمان عمله بكفاءة تامة." data-en="Performing necessary repairs and testing AC cooling performance.">إجراء الإصلاحات اللازمة واختبار تبريد المكيف لضمان عمله بكفاءة تامة.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact & Location -->
-    <section id="contact">
-        <div class="section-title">
-            <h2 class="i18n" data-ar="تواصل معنا" data-en="Contact Us">تواصل معنا</h2>
-            <p class="i18n" data-ar="نحن جاهزون دائماً لخدمتكم في الرياض" data-en="We are always ready to serve you in Riyadh">نحن جاهزون دائماً لخدمتكم في الرياض</p>
-        </div>
-        <div class="contact-box">
-            <div>
-                <h3 style="font-size: 26px; margin-bottom: 20px;">العهد كولنج سنتر</h3>
-                <div class="contact-info-item">
-                    <i class="fas fa-phone-alt"></i>
-                    <span>0540641082</span>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3 class="i18n" data-ar="ضعف التبريد" data-en="Cooling Drop">ضعف التبريد</h3>
+                    <p class="i18n" data-ar="فحص وضبط كفاءة التبريد" data-en="Check cooling efficiency">فحص وضبط كفاءة التبريد</p>
                 </div>
-                <div class="contact-info-item">
-                    <i class="fab fa-whatsapp"></i>
-                    <span>0540641082</span>
+                <div class="service-card">
+                    <h3 class="i18n" data-ar="تسريب الفريون" data-en="Freon Leak">تسريب الفريون</h3>
+                    <p class="i18n" data-ar="كشف وإعادة تعبئة الغاز" data-en="Leak detection & refill">كشف وإعادة تعبئة الغاز</p>
                 </div>
-                <div class="contact-info-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span class="i18n" data-ar="الرياض، المملكة العربية السعودية" data-en="Riyadh, Saudi Arabia">الرياض، المملكة العربية السعودية</span>
+                <div class="service-card">
+                    <h3 class="i18n" data-ar="تسريب المياه" data-en="Water Leak">تسريب المياه</h3>
+                    <p class="i18n" data-ar="تسليك أنابيب الصرف" data-en="Clear drainage pipes">تسليك أنابيب الصرف</p>
+                </div>
+                <div class="service-card">
+                    <h3 class="i18n" data-ar="أعطال الكمبريسور" data-en="Compressor">أعطال الكمبريسور</h3>
+                    <p class="i18n" data-ar="إصلاح الفولت والكهرباء" data-en="Electrical & voltage fix">إصلاح الفولت والكهرباء</p>
                 </div>
             </div>
-            <div style="text-align: center;">
-                <p class="i18n" data-ar="احصل على استشارة أو اطلب فني الآن بضغطة زر واحدة:" data-en="Get a consultation or request a technician now with one click:" style="margin-bottom: 20px; font-size: 18px;">احصل على استشارة أو اطلب فني الآن بضغطة زر واحدة:</p>
-                <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
-                    <a href="tel:0540641082" class="cta-btn" style="padding: 15px 30px; font-size: 16px;"><i class="fas fa-phone"></i> <span class="i18n" data-ar="اتصل بنا" data-en="Call Us">اتصل بنا</span></a>
-                    <a href="https://wa.me/966540641082" class="btn-whatsapp" style="padding: 15px 30px; font-size: 16px;" target="_blank"><i class="fab fa-whatsapp"></i> <span class="i18n" data-ar="واتساب مباشر" data-en="Direct WhatsApp">واتساب مباشر</span></a>
+        </section>
+
+        <!-- Gallery Section (Your exact images) -->
+        <section style="background: #fff;">
+            <div class="section-title">
+                <h2 class="i18n" data-ar="معرض أعمالنا" data-en="Our Gallery">معرض أعمالنا</h2>
+                <p class="i18n" data-ar="لقطات حية من خدماتنا الميدانية" data-en="Live snaps of field services">لقطات حية من خدماتنا الميدانية</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="img-card">
+                    <img src="1000350039.webp" alt="Inspection">
+                    <p class="caption i18n" data-ar="فحص فني دقيق" data-en="Precise Inspection">فحص فني دقيق</p>
+                </div>
+                <div class="img-card">
+                    <img src="1000350027.png" alt="Cleaning">
+                    <p class="caption i18n" data-ar="تنظيف احترافي" data-en="Pro Cleaning">تنظيف احترافي</p>
+                </div>
+                <div class="img-card">
+                    <img src="1000350035.jpg" alt="Electrical">
+                    <p class="caption i18n" data-ar="صيانة كهربائية" data-en="Electrical Care">صيانة كهربائية</p>
+                </div>
+                <div class="img-card">
+                    <img src="1000350033.jpg" alt="Outdoor Unit">
+                    <p class="caption i18n" data-ar="الوحدات الخارجية" data-en="Outdoor Units">الوحدات الخارجية</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Floating Action Buttons -->
-    <div class="floating-buttons">
-        <a href="https://wa.me/966540641082" class="float-btn float-whatsapp" target="_blank" title="تواصل عبر الواتساب"><i class="fab fa-whatsapp"></i></a>
-        <a href="tel:0540641082" class="float-btn float-call" title="اتصل الآن"><i class="fas fa-phone"></i></a>
+        <!-- Reviews & Stats -->
+        <section class="reviews-section">
+            <h2 class="i18n" data-ar="ثقة عملائنا في الرياض" data-en="Our Clients Trust">ثقة عملائنا في الرياض</h2>
+            <div class="stats-container">
+                <div>
+                    <div class="stat-number">1.1K+</div>
+                    <div class="stat-label i18n" data-ar="تقييمات" data-en="Reviews">تقييمات</div>
+                </div>
+                <div>
+                    <div class="stat-number">1M+</div>
+                    <div class="stat-label i18n" data-ar="عملاء راضون" data-en="Happy Clients">عملاء راضون</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section>
+            <div class="section-title">
+                <h2 class="i18n" data-ar="تواصل معنا الآن" data-en="Contact Us Now">تواصل معنا الآن</h2>
+            </div>
+            <div class="contact-box">
+                <div class="contact-item"><i class="fas fa-phone-alt"></i> 0540641082</div>
+                <div class="contact-item"><i class="fab fa-whatsapp"></i> 0540641082</div>
+                <div style="margin-top: 15px; display: flex; gap: 10px; justify-content: center;">
+                    <a href="tel:0540641082" class="btn-main" style="width: 100%; justify-content: center;"><i class="fas fa-phone"></i> <span class="i18n" data-ar="اتصال مباشر" data-en="Direct Call">اتصال مباشر</span></a>
+                </div>
+            </div>
+        </section>
+
+        <div class="footer-space"></div>
     </div>
 
-    <!-- JavaScript for Language Toggle & Default Arabic Load -->
+    <!-- JavaScript for Language Toggle -->
     <script>
         function toggleLanguage() {
             const htmlTag = document.getElementById('htmlTag');
             const currentDir = htmlTag.getAttribute('dir');
             
             if (currentDir === 'rtl') {
-                // Switch to English (LTR)
                 htmlTag.setAttribute('dir', 'ltr');
                 htmlTag.setAttribute('lang', 'en');
                 document.querySelectorAll('.i18n').forEach(el => {
@@ -762,7 +450,6 @@
                     }
                 });
             } else {
-                // Switch to Arabic (RTL)
                 htmlTag.setAttribute('dir', 'rtl');
                 htmlTag.setAttribute('lang', 'ar');
                 document.querySelectorAll('.i18n').forEach(el => {
