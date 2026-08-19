@@ -1,609 +1,70 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar" dir="rtl" id="htmlTag">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>العهد كولنج سنتر | Al Ahad Cooling Center - Riyadh</title>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+    <title class="i18n" data-ar="العهد كولنج سنتر" data-en="Al Ahad Cooling Center">العهد كولنج سنتر</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <style>
-        :root {
-            --primary-blue: #0A2540;
-            --cyan-accent: #00D4FF;
-            --gold-accent: #FFD700;
-            --light-bg: #F4F7FA;
-            --white: #FFFFFF;
-            --text-dark: #333333;
-            --transition: all 0.3s ease;
-        }
+        :root { --primary: #0A2540; --cyan: #00D4FF; --gold: #FFD700; }
+        body { font-family: 'Cairo', sans-serif; margin: 0; background: #f4f7fa; }
+        
+        /* Language Switcher */
+        .lang-btn { position: fixed; top: 10px; left: 10px; z-index: 2000; padding: 8px 15px; background: var(--primary); color: white; border: none; cursor: pointer; border-radius: 5px; }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Cairo', 'Poppins', sans-serif;
-        }
+        /* Animation class */
+        .animate-box { animation: fadeInUp 1s; }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
 
-        body {
-            background-color: var(--light-bg);
-            color: var(--text-dark);
-            line-height: 1.6;
-        }
+        /* Image Gallery Styling */
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; padding: 50px 5%; }
+        .img-card { background: white; padding: 15px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .img-card img { width: 100%; border-radius: 10px; }
+        .caption { text-align: center; font-weight: bold; margin-top: 10px; color: var(--primary); }
 
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        /* Top Bar */
-        .top-bar {
-            background: var(--primary-blue);
-            color: var(--white);
-            padding: 8px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 14px;
-        }
-
-        .top-bar .contact-info span {
-            margin-left: 20px;
-        }
-
-        .top-bar i {
-            color: var(--cyan-accent);
-            margin-left: 5px;
-        }
-
-        /* Header / Navbar */
-        header {
-            background: var(--white);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 5%;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .logo i {
-            font-size: 30px;
-            color: var(--cyan-accent);
-        }
-
-        .logo h1 {
-            font-size: 22px;
-            color: var(--primary-blue);
-            font-weight: 950;
-        }
-
-        .logo span {
-            display: block;
-            font-size: 12px;
-            color: #666;
-            font-weight: 600;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 25px;
-            align-items: center;
-        }
-
-        nav a {
-            font-weight: 600;
-            color: var(--primary-blue);
-            transition: var(--transition);
-        }
-
-        nav a:hover {
-            color: var(--cyan-accent);
-        }
-
-        .cta-btn {
-            background: linear-gradient(135deg, var(--cyan-accent), #0088cc);
-            color: var(--white);
-            padding: 10px 20px;
-            border-radius: 30px;
-            font-weight: 700;
-            box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
-            transition: var(--transition);
-        }
-
-        .cta-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0, 212, 255, 0.5);
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, var(--primary-blue), #13385c);
-            color: var(--white);
-            padding: 80px 5%;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
-        }
-
-        .hero-content h2 {
-            font-size: 42px;
-            font-weight: 900;
-            margin-bottom: 20px;
-            line-height: 1.2;
-        }
-
-        .hero-content h2 span {
-            color: var(--gold-accent);
-        }
-
-        .hero-content p {
-            font-size: 18px;
-            margin-bottom: 30px;
-            opacity: 0.9;
-        }
-
-        .hero-btns {
-            display: flex;
-            gap: 15px;
-        }
-
-        .btn-whatsapp {
-            background: #25D366;
-            color: white;
-            padding: 12px 25px;
-            border-radius: 30px;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            transition: var(--transition);
-        }
-
-        .btn-whatsapp:hover {
-            background: #20ba5a;
-        }
-
-        .hero-trust {
-            margin-top: 30px;
-            display: flex;
-            gap: 20px;
-            font-size: 14px;
-            font-weight: 600;
-        }
-
-        .hero-trust i {
-            color: var(--gold-accent);
-        }
-
-        .hero-card {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 30px;
-            border-radius: 15px;
-            backdrop-filter: blur(10px);
-            text-align: center;
-        }
-
-        .hero-card i {
-            font-size: 60px;
-            color: var(--cyan-accent);
-            margin-bottom: 15px;
-        }
-
-        /* Section Styling */
-        section {
-            padding: 70px 5%;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .section-title h2 {
-            font-size: 32px;
-            color: var(--primary-blue);
-            font-weight: 800;
-            margin-bottom: 10px;
-        }
-
-        .section-title p {
-            color: #666;
-            font-size: 16px;
-        }
-
-        /* Why Choose Us */
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 25px;
-        }
-
-        .feature-box {
-            background: var(--white);
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-            text-align: center;
-            transition: var(--transition);
-            border-bottom: 4px solid var(--cyan-accent);
-        }
-
-        .feature-box:hover {
-            transform: translateY(-5px);
-        }
-
-        .feature-box i {
-            font-size: 40px;
-            color: var(--primary-blue);
-            margin-bottom: 20px;
-        }
-
-        .feature-box h3 {
-            font-size: 18px;
-            margin-bottom: 10px;
-            color: var(--primary-blue);
-        }
-
-        /* Services Grid */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 25px;
-        }
-
-        .service-card {
-            background: var(--white);
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            padding: 30px;
-            border-top: 4px solid var(--gold-accent);
-        }
-
-        .service-card h3 {
-            font-size: 20px;
-            color: var(--primary-blue);
-            margin-bottom: 15px;
-        }
-
-        /* Brands Section */
-        .brands-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            background: var(--white);
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
-        }
-
-        .brand-badge {
-            background: var(--light-bg);
-            padding: 12px 25px;
-            border-radius: 8px;
-            font-weight: 700;
-            color: var(--primary-blue);
-            border: 1px solid #e1e8ed;
-        }
-
-        /* Process Steps */
-        .process-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
-
-        .process-step {
-            background: var(--white);
-            padding: 35px 25px;
-            border-radius: 15px;
-            position: relative;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        }
-
-        .step-number {
-            position: absolute;
-            top: -20px;
-            right: 25px;
-            background: var(--cyan-accent);
-            color: var(--primary-blue);
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 900;
-            font-size: 18px;
-            box-shadow: 0 4px 10px rgba(0,212,255,0.4);
-        }
-
-        .process-step h3 {
-            margin-top: 10px;
-            color: var(--primary-blue);
-            margin-bottom: 10px;
-        }
-
-        /* Contact Section */
-        .contact-box {
-            background: linear-gradient(135deg, var(--primary-blue), #13385c);
-            color: var(--white);
-            padding: 50px;
-            border-radius: 20px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
-        }
-
-        .contact-info-item {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 20px;
-            font-size: 18px;
-        }
-
-        .contact-info-item i {
-            color: var(--cyan-accent);
-            font-size: 24px;
-        }
-
-        /* Floating Buttons */
-        .floating-buttons {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            z-index: 999;
-        }
-
-        .float-btn {
-            width: 55px;
-            height: 55px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 24px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            transition: var(--transition);
-        }
-
-        .float-whatsapp { background: #25D366; }
-        .float-call { background: var(--cyan-accent); color: var(--primary-blue); }
-
-        .float-btn:hover {
-            transform: scale(1.1);
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .hero, .contact-box {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-            .hero-btns, .hero-trust {
-                justify-content: center;
-            }
-            nav ul {
-                display: none;
-            }
-            .top-bar {
-                flex-direction: column;
-                gap: 5px;
-                text-align: center;
-            }
-        }
+        /* Review Section */
+        .reviews { padding: 50px 5%; background: var(--primary); color: white; text-align: center; }
+        .stats { display: flex; justify-content: center; gap: 50px; margin-top: 30px; }
+        .stat-box { font-size: 24px; font-weight: bold; color: var(--gold); }
     </style>
 </head>
 <body>
 
-    <!-- Top Bar -->
-    <div class="top-bar">
-        <div class="contact-info">
-            <span><i class="fas fa-phone-alt"></i> 0540641082</span>
-            <span><i class="fas fa-map-marker-alt"></i> الرياض، المملكة العربية السعودية</span>
-        </div>
-        <div>خدمة صيانة وإصلاح المكيفات في الرياض</div>
-    </div>
+    <button class="lang-btn" onclick="toggleLang()">English / العربية</button>
 
-    <!-- Header -->
-    <header>
-        <div class="logo">
-            <i class="fas fa-snowflake"></i>
-            <div>
-                <h1>العهد كولنج سنتر</h1>
-                <span>Al Ahad Cooling Center</span>
-            </div>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#services">الخدمات</a></li>
-                <li><a href="#about">من نحن</a></li>
-                <li><a href="#why-us">لماذا نحن</a></li>
-                <li><a href="#contact" class="cta-btn">اتصل بنا فوراً</a></li>
-            </ul>
-        </nav>
+    <!-- Header Section -->
+    <header class="animate-box" style="text-align: center; padding: 50px; background: white;">
+        <h1 class="i18n" data-ar="مرحباً بكم في العهد كولنج سنتر" data-en="Welcome to Al Ahad Cooling Center">مرحباً بكم في العهد كولنج سنتر</h1>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h2>خدمات تكييف الهواء الاحترافية في <span>الرياض</span></h2>
-            <p>حلول شاملة لجميع أعطال المكيفات مع فنيين خبراء، خدمة فورية في نفس اليوم، وضمان على كافة أعمال الصيانة والتركيب.</p>
-            <div class="hero-btns">
-                <a href="tel:0540641082" class="cta-btn"><i class="fas fa-phone"></i> اتصل الآن</a>
-                <a href="https://wa.me/966540641082" class="btn-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i> واتساب</a>
-            </div>
-            <div class="hero-trust">
-                <span><i class="fas fa-check-circle"></i> فنيين معتمدين</span>
-                <span><i class="fas fa-check-circle"></i> خدمة سريعة نفس اليوم</span>
-            </div>
-        </div>
-        <div class="hero-card">
-            <i class="fas fa-tools"></i>
-            <h3>الصيانة الفورية للمكيفات</h3>
-            <p>جاهزون لخدمتكم طوال أيام الأسبوع في مختلف أحيار الرياض.</p>
+    <!-- Images Section -->
+    <section class="gallery-grid">
+        <div class="img-card animate-box"><img src="1000350039.webp"><p class="caption">فحص فني دقيق</p></div>
+        <div class="img-card animate-box"><img src="1000350027.png"><p class="caption">تنظيف احترافي للمكيفات</p></div>
+        <div class="img-card animate-box"><img src="1000350035.jpg"><p class="caption">صيانة المكونات الكهربائية</p></div>
+        <div class="img-card animate-box"><img src="1000350033.jpg"><p class="caption">صيانة المكيفات الخارجية</p></div>
+    </section>
+
+    <!-- Reviews & Stats Section -->
+    <section class="reviews">
+        <h2 class="i18n" data-ar="ماذا يقول عملاؤنا" data-en="What our clients say">ماذا يقول عملاؤنا</h2>
+        <div class="stats">
+            <div><div class="stat-box">1.1K+</div><p>Client Reviews</p></div>
+            <div><div class="stat-box">1 Million+</div><p>Satisfied Customers</p></div>
         </div>
     </section>
 
-    <!-- Why Choose Us -->
-    <section id="why-us">
-        <div class="section-title">
-            <h2>لماذا تختار العهد كولنج سنتر؟</h2>
-            <p>نتميز بالجودة والاحترافية لكسب ثقة عملائنا في الرياض</p>
-        </div>
-        <div class="features-grid">
-            <div class="feature-box">
-                <i class="fas fa-award"></i>
-                <h3>جودة عالية</h3>
-                <p>نضمن لك أعلى معايير الجودة في كافة أعمال الصيانة والإصلاح.</p>
-            </div>
-            <div class="feature-box">
-                <i class="fas fa-bolt"></i>
-                <h3>خدمة نفس اليوم</h3>
-                <p>نصل إليك فوراً في نفس اليوم لحل مشاكل التبريد لديك.</p>
-            </div>
-            <div class="feature-box">
-                <i class="fas fa-users-cog"></i>
-                <h3>فنيين خبراء</h3>
-                <p>فريق فني محترف ومدرب على أحدث تقنيات التكييف.</p>
-            </div>
-            <div class="feature-box">
-                <i class="fas fa-check-double"></i>
-                <h3>دعم كافة الماركات</h3>
-                <p>خبرة واسعة في التعامل مع جميع أنواع وماركات المكيفات العالمية.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" style="background: #fff;">
-        <div class="section-title">
-            <h2>خدماتنا والأعطال التي نصلحها</h2>
-            <p>حلول دقيقة لكل مشكلة تواجه مكيفك</p>
-        </div>
-        <div class="services-grid">
-            <div class="service-card">
-                <h3>ضعف التبريد</h3>
-                <p>فحص وضبط كفاءة التبريد وإعادة تدفق الهواء البارد بكامل طاقتة.</p>
-            </div>
-            <div class="service-card">
-                <h3>تسريب الغاز (الفريون)</h3>
-                <p>الكشف عن مواقع التسريب بدقة واعادة شحن الفريون الأصلي.</p>
-            </div>
-            <div class="service-card">
-                <h3>تسريب المياه</h3>
-                <p>تسليك أنابيب الصرف ومنع تجمع وتطاير المياه داخل المكان.</p>
-            </div>
-            <div class="service-card">
-                <h3>أعطال الكمبريسور والكهرباء</h3>
-                <p>إصلاح الفولت، الأسلاك، وفحص كفاءة الكمبريسور لضمان استمرارية العمل.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Brands Section -->
-    <section>
-        <div class="section-title">
-            <h2>العلامات التجارية التي نخدمها</h2>
-            <p>ندعم جميع الأنواع والماركات الشهيرة في السوق السعودي</p>
-        </div>
-        <div class="brands-container">
-            <div class="brand-badge">Gree</div>
-            <div class="brand-badge">Carrier</div>
-            <div class="brand-badge">Hisense</div>
-            <div class="brand-badge">Hitachi</div>
-            <div class="brand-badge">LG</div>
-            <div class="brand-badge">Midea</div>
-            <div class="brand-badge">Panasonic</div>
-            <div class="brand-badge">TCL</div>
-            <div class="brand-badge">Toshiba</div>
-            <div class="brand-badge">Haier</div>
-        </div>
-    </section>
-
-    <!-- Service Process -->
-    <section style="background: #fff;">
-        <div class="section-title">
-            <h2>طريقة العمل في 3 خطوات سهلة</h2>
-            <p>خطوات بسيطة وسريعة للحصول على أفضل خدمة</p>
-        </div>
-        <div class="process-grid">
-            <div class="process-step">
-                <div class="step-number">01</div>
-                <h3>حجز الخدمة</h3>
-                <p>تواصل معنا عبر الهاتف أو الواتساب لتحديد موعد الزيارة المناسب لك.</p>
-            </div>
-            <div class="process-step">
-                <div class="step-number">02</div>
-                <h3>الفحص الشامل</h3>
-                <p>يقوم الفني بفحص المكيف بدقة لتحديد العطل بدقة واحترافية.</p>
-            </div>
-            <div class="process-step">
-                <div class="step-number">03</div>
-                <h3>الإصلاح والاختبار</h3>
-                <p>إجراء الإصلاحات اللازمة واختبار تبريد المكيف لضمان عمله بكفاءة تامة.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact & Location -->
-    <section id="contact">
-        <div class="section-title">
-            <h2>تواصل معنا</h2>
-            <p>نحن جاهزون دائماً لخدمتكم في الرياض</p>
-        </div>
-        <div class="contact-box">
-            <div>
-                <h3 style="font-size: 26px; margin-bottom: 20px;">العهد كولنج سنتر</h3>
-                <div class="contact-info-item">
-                    <i class="fas fa-phone-alt"></i>
-                    <span>0540641082</span>
-                </div>
-                <div class="contact-info-item">
-                    <i class="fab fa-whatsapp"></i>
-                    <span>0540641082</span>
-                </div>
-                <div class="contact-info-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span>الرياض، المملكة العربية السعودية</span>
-                </div>
-            </div>
-            <div style="text-align: center;">
-                <p style="margin-bottom: 20px; font-size: 18px;">احصل على استشارة أو اطلب فني الآن بضغطة زر واحدة:</p>
-                <div style="display: flex; gap: 15px; justify-content: center;">
-                    <a href="tel:0540641082" class="cta-btn" style="padding: 15px 30px; font-size: 16px;"><i class="fas fa-phone"></i> اتصل بنا</a>
-                    <a href="https://wa.me/966540641082" class="btn-whatsapp" style="padding: 15px 30px; font-size: 16px;" target="_blank"><i class="fab fa-whatsapp"></i> واتساب مباشر</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Floating Action Buttons -->
-    <div class="floating-buttons">
-        <a href="https://wa.me/966540641082" class="float-btn float-whatsapp" target="_blank" title="تواصل عبر الواتساب"><i class="fab fa-whatsapp"></i></a>
-        <a href="tel:0540641082" class="float-btn float-call" title="اتصل الآن"><i class="fas fa-phone"></i></a>
-    </div>
-
+    <script>
+        function toggleLang() {
+            const html = document.getElementById('htmlTag');
+            const lang = html.getAttribute('dir') === 'rtl' ? 'en' : 'ar';
+            html.setAttribute('dir', lang === 'rtl' ? 'rtl' : 'ltr');
+            html.setAttribute('lang', lang);
+            document.querySelectorAll('.i18n').forEach(el => {
+                el.innerText = el.getAttribute('data-' + lang);
+            });
+        }
+    </script>
 </body>
 </html>
