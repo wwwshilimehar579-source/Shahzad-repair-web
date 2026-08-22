@@ -1,460 +1,334 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl" id="htmlTag">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title class="i18n" data-ar="العهد كولنج سنتر" data-en="Al Ahad Cooling Center">العهد كولنج سنتر</title>
-    <!-- Google Fonts -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مركز الأحد للتبريد والتكييف | صيانة مكيفات وغسالات بالرياض</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Google Fonts: Cairo -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
     <style>
-        :root {
-            --primary: #0b2545;
-            --accent: #00b4d8;
-            --gold: #ffb703;
-            --bg-light: #f8f9fa;
-            --text-dark: #212529;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Cairo', sans-serif;
-        }
-
         body {
-            background-color: #121212;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
+            font-family: 'Cairo', sans-serif;
+            background-color: #f0f9ff;
+            color: #0c4a6e;
         }
-
-        /* Mobile Screen Container */
-        .mobile-container {
-            width: 100%;
-            max-width: 420px;
-            height: 100vh;
-            max-height: 850px;
-            background: var(--bg-light);
-            overflow-y: auto;
-            position: relative;
-            box-shadow: 0 0 25px rgba(0,0,0,0.6);
-            border-radius: 0px;
-        }
-
-        @media (min-width: 421px) {
-            .mobile-container {
-                border-radius: 35px;
-                border: 12px solid #222;
-            }
-        }
-
-        /* Compact Language Switcher */
-        .lang-btn {
-            position: absolute;
-            top: 12px;
-            left: 12px;
-            z-index: 100;
-            background: rgba(11, 37, 69, 0.85);
-            color: var(--gold);
-            border: 1px solid var(--gold);
-            padding: 3px 8px;
-            font-size: 10px;
-            font-weight: 700;
-            border-radius: 10px;
-            cursor: pointer;
-            backdrop-filter: blur(4px);
-        }
-
-        /* Top Header Bar */
-        .top-bar {
-            background: var(--primary);
-            color: white;
-            padding: 8px 15px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 11px;
-        }
-
-        .top-bar a {
-            color: var(--accent);
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        /* Main Nav Header */
-        header {
-            background: white;
-            padding: 12px 15px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-            position: sticky;
-            top: 0;
-            z-index: 99;
-        }
-
-        .logo-box {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .logo-box i {
-            font-size: 20px;
-            color: var(--accent);
-        }
-
-        .logo-text h1 {
-            font-size: 14px;
-            color: var(--primary);
-            font-weight: 900;
-            line-height: 1.1;
-        }
-
-        .logo-text span {
-            font-size: 9px;
-            color: #666;
-        }
-
-        .book-now-btn {
-            background: var(--accent);
-            color: var(--primary);
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-size: 11px;
-            font-weight: 700;
-            text-decoration: none;
-            box-shadow: 0 2px 5px rgba(0,180,216,0.3);
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, var(--primary), #1d3557);
-            color: white;
-            padding: 35px 20px;
-            text-align: center;
-        }
-
-        .hero h2 {
-            font-size: 20px;
-            font-weight: 900;
-            margin-bottom: 8px;
-            line-height: 1.3;
-        }
-
-        .hero h2 span {
-            color: var(--gold);
-        }
-
-        .hero p {
-            font-size: 12px;
-            opacity: 0.9;
-            margin-bottom: 20px;
-        }
-
-        .hero-actions {
-            display: flex;
-            gap: 10px;
-            justify-content: center;
-        }
-
-        .btn-call {
-            background: var(--accent);
-            color: var(--primary);
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 700;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        .btn-wa {
-            background: #25d366;
-            color: white;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 700;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        /* Section Styling */
-        section {
-            padding: 25px 15px;
-        }
-
-        .sec-title {
-            text-align: center;
-            margin-bottom: 18px;
-        }
-
-        .sec-title h3 {
-            font-size: 16px;
-            color: var(--primary);
-            font-weight: 800;
-        }
-
-        .sec-title p {
-            font-size: 11px;
-            color: #666;
-        }
-
-        /* Services Grid */
-        .services-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px;
-        }
-
-        .service-card {
-            background: white;
-            padding: 12px 10px;
-            border-radius: 10px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.04);
-            border-top: 3px solid var(--accent);
-            text-align: center;
-        }
-
-        .service-card h4 {
-            font-size: 12px;
-            color: var(--primary);
-            margin-bottom: 4px;
-        }
-
-        .service-card p {
-            font-size: 10px;
-            color: #666;
-        }
-
-        /* Gallery Grid (Your Provided Images) */
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px;
-        }
-
-        .gallery-card {
-            background: white;
-            padding: 8px;
-            border-radius: 10px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-            text-align: center;
-        }
-
-        .gallery-card img {
-            width: 100%;
-            height: 105px;
-            object-fit: cover;
-            border-radius: 6px;
-        }
-
-        .gallery-card p {
-            font-size: 11px;
-            font-weight: bold;
-            color: var(--primary);
-            margin-top: 6px;
-        }
-
-        /* Stats & Trust Bar */
-        .stats-section {
-            background: var(--primary);
-            color: white;
-            padding: 25px 15px;
-            text-align: center;
-        }
-
-        .stats-row {
-            display: flex;
-            justify-content: space-around;
-            margin-top: 12px;
-        }
-
-        .stat-box .num {
-            font-size: 18px;
-            font-weight: 900;
-            color: var(--gold);
-        }
-
-        .stat-box .lbl {
-            font-size: 10px;
-            opacity: 0.8;
-        }
-
-        /* Bottom Contact Box */
-        .contact-box {
-            background: white;
-            padding: 20px 15px;
-            border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-            text-align: center;
-            margin: 0 15px 25px 15px;
-        }
-
-        .contact-row {
-            font-size: 12px;
-            color: var(--primary);
-            font-weight: bold;
-            margin-bottom: 8px;
-        }
-
-        .contact-row i {
-            color: var(--accent);
-            margin-left: 5px;
-        }
-
-        .spacer { height: 20px; }
     </style>
 </head>
-<body>
+<body class="bg-[#f0f9ff] text-[#0c4a6e] antialiased selection:bg-[#0ea5e9] selection:text-white pb-24 md:pb-0">
 
-    <div class="mobile-container">
-        
-        <!-- Language Switcher (Small & Neat) -->
-        <button class="lang-btn" onclick="toggleLanguage()">EN / AR</button>
-
-        <!-- Top Bar -->
-        <div class="top-bar">
-            <span><i class="fas fa-phone-alt"></i> 0540641082</span>
-            <span class="i18n" data-ar="خدمة فورية بالرياض" data-en="Instant Riyadh Service">خدمة فورية بالرياض</span>
-        </div>
-
-        <!-- Main Header -->
-        <header>
-            <div class="logo-box">
-                <i class="fas fa-snowflake"></i>
-                <div class="logo-text">
-                    <h1>العهد كولنج</h1>
-                    <span>Cooling Center</span>
-                </div>
-            </div>
-            <a href="tel:0540641082" class="book-now-btn i18n" data-ar="اطلب فني" data-en="Book Tech">اطلب فني</a>
-        </header>
-
-        <!-- Hero Section -->
-        <section class="hero">
-            <h2 class="i18n" data-ar="أفضل خدمات صيانة المكيفات في <span>الرياض</span>" data-en="Best AC Repair Services in <span>Riyadh</span>">أفضل خدمات صيانة المكيفات في <span>الرياض</span></h2>
-            <p class="i18n" data-ar="صيانة، تنظيف، وإصلاح جميع أنواع المكيفات بمهارة وبضمان." data-en="Maintenance, cleaning, and repair of all ACs with warranty.">صيانة، تنظيف، وإصلاح جميع أنواع المكيفات بمهارة وبضمان.</p>
-            <div class="hero-actions">
-                <a href="tel:0540641082" class="btn-call"><i class="fas fa-phone"></i> <span class="i18n" data-ar="اتصل بنا" data-en="Call Us">اتصل بنا</span></a>
-                <a href="https://wa.me/966540641082" class="btn-wa" target="_blank"><i class="fab fa-whatsapp"></i> <span class="i18n" data-ar="واتساب" data-en="WhatsApp">واتساب</span></a>
-            </div>
-        </section>
-
-        <!-- Services Section -->
-        <section>
-            <div class="sec-title">
-                <h3 class="i18n" data-ar="خدماتنا الاحترافية" data-en="Our Professional Services">خدماتنا الاحترافية</h3>
-                <p class="i18n" data-ar="حلول متكاملة لجميع الأعطال" data-en="Complete solutions for all faults">حلول متكاملة لجميع الأعطال</p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <h4 class="i18n" data-ar="ضعف التبريد" data-en="Cooling Drop">ضعف التبريد</h4>
-                    <p class="i18n" data-ar="فحص وضبط الغاز" data-en="Check & adjust gas">فحص وضبط الغاز</p>
-                </div>
-                <div class="service-card">
-                    <h4 class="i18n" data-ar="تسريب الفريون" data-en="Freon Leak">تسريب الفريون</h4>
-                    <p class="i18n" data-ar="كشف وإعادة تعبئة" data-en="Detect & refill">كشف وإعادة تعبئة</p>
-                </div>
-                <div class="service-card">
-                    <h4 class="i18n" data-ar="تسريب المياه" data-en="Water Leak">تسريب المياه</h4>
-                    <p class="i18n" data-ar="تسليك أنابيب الصرف" data-en="Clear drain pipes">تسليك أنابيب الصرف</p>
-                </div>
-                <div class="service-card">
-                    <h4 class="i18n" data-ar="أعطال كهربائية" data-en="Electrical Issues">أعطال كهربائية</h4>
-                    <p class="i18n" data-ar="صيانة الكمبريسور" data-en="Compressor care">صيانة الكمبريسور</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Gallery Section (Your exact images) -->
-        <section style="background: #fff;">
-            <div class="sec-title">
-                <h3 class="i18n" data-ar="معرض أعمالنا الميدانية" data-en="Field Work Gallery">معرض أعمالنا الميدانية</h3>
-                <p class="i18n" data-ar="لقطات حية من خدمات الصيانة" data-en="Live snaps of maintenance">لقطات حية من خدمات الصيانة</p>
-            </div>
-            <div class="gallery-grid">
-                <div class="gallery-card">
-                    <img src="1000350039.webp" alt="Inspection">
-                    <p class="i18n" data-ar="فحص فني دقيق" data-en="Precise Inspection">فحص فني دقيق</p>
-                </div>
-                <div class="gallery-card">
-                    <img src="1000350027.png" alt="Cleaning">
-                    <p class="i18n" data-ar="تنظيف احترافي" data-en="Pro Cleaning">تنظيف احترافي</p>
-                </div>
-                <div class="gallery-card">
-                    <img src="1000350035.jpg" alt="Electrical">
-                    <p class="i18n" data-ar="صيانة كهربائية" data-en="Electrical Care">صيانة كهربائية</p>
-                </div>
-                <div class="gallery-card">
-                    <img src="1000350033.jpg" alt="Outdoor Unit">
-                    <p class="i18n" data-ar="الوحدات الخارجية" data-en="Outdoor Units">الوحدات الخارجية</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Stats Section -->
-        <section class="stats-section">
-            <h3 class="i18n" data-ar="لماذا يثق بنا العملاء؟" data-en="Why Clients Trust Us?">لماذا يثق بنا العملاء؟</h3>
-            <div class="stats-row">
-                <div class="stat-box">
-                    <div class="num">1.1K+</div>
-                    <div class="lbl i18n" data-ar="تقييمات" data-en="Reviews">تقييمات</div>
-                </div>
-                <div class="stat-box">
-                    <div class="num">1M+</div>
-                    <div class="lbl i18n" data-ar="عملاء راضون" data-en="Happy Clients">عملاء راضون</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Box -->
-        <div style="padding-top: 25px;">
-            <div class="contact-box">
-                <div class="contact-row"><i class="fas fa-phone-alt"></i> 0540641082</div>
-                <div class="contact-row"><i class="fab fa-whatsapp"></i> 0540641082</div>
-                <a href="tel:0540641082" class="btn-call" style="width: 100%; justify-content: center; margin-top: 15px;"><i class="fas fa-phone"></i> <span class="i18n" data-ar="اتصل الآن واحصل على خدمة" data-en="Call Now & Get Service">اتصل الآن واحصل على خدمة</span></a>
-            </div>
-        </div>
-
-        <div class="spacer"></div>
+    <!-- Top Emergency Bar -->
+    <div class="bg-[#0c4a6e] text-white py-2 px-4 text-center text-xs md:text-sm font-semibold flex items-center justify-center gap-2 shadow-sm">
+        <span class="inline-block w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span>خدمة طوارئ وصيانة فورية 24 ساعة في جميع أحياء الرياض | وصول خلال 30-45 دقيقة</span>
     </div>
 
-    <!-- Script for language toggling -->
-    <script>
-        function toggleLanguage() {
-            const htmlTag = document.getElementById('htmlTag');
-            const currentDir = htmlTag.getAttribute('dir');
+    <!-- Main Container -->
+    <main class="max-w-6xl mx-auto px-4 py-6 md:py-10 space-y-8">
+
+        <!-- ================= HERO SECTION (Bento Grid) ================= -->
+        <section class="grid grid-cols-1 md:grid-cols-12 gap-6">
             
-            if (currentDir === 'rtl') {
-                htmlTag.setAttribute('dir', 'ltr');
-                htmlTag.setAttribute('lang', 'en');
-                document.querySelectorAll('.i18n').forEach(el => {
-                    if(el.getAttribute('data-en')) {
-                        el.innerHTML = el.getAttribute('data-en');
-                    }
-                });
-            } else {
-                htmlTag.setAttribute('dir', 'rtl');
-                htmlTag.setAttribute('lang', 'ar');
-                document.querySelectorAll('.i18n').forEach(el => {
-                    if(el.getAttribute('data-ar')) {
-                        el.innerHTML = el.getAttribute('data-ar');
-                    }
-                });
+            <!-- Main Hero Card -->
+            <div class="md:col-span-8 bg-white rounded-3xl p-6 md:p-10 shadow-sm border border-sky-100 flex flex-col justify-between relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-32 h-32 bg-sky-50 rounded-full blur-2xl -z-10"></div>
+                
+                <div>
+                    <span class="inline-block bg-sky-100 text-[#0c4a6e] font-bold text-xs px-3 py-1.5 rounded-full mb-4">
+                        الخيار الأول في الرياض 🏆
+                    </span>
+                    <h1 class="text-2xl md:text-4xl font-black leading-snug md:leading-tight mb-4">
+                        مركز الأحد لصيانة المكيفات والغسالات بأعلى جودة وأسرع استجابة بالرياض
+                    </h1>
+                    <p class="text-slate-600 text-sm md:text-base leading-relaxed mb-6">
+                        نقدم خدمات التركيب، الصيانة الشاملة، وتنظيف المكيفات بجميع أنواعها (سبليت، شباك، مركزي) وتصليح الغسالات والأجهزة المنزلية بأيدي فنيين محترفين ومعتمدين.
+                    </p>
+                </div>
+
+                <!-- CTA Action Buttons -->
+                <div class="flex flex-col sm:flex-row gap-3 pt-4 border-t border-slate-100">
+                    <a href="tel:0540641082" class="flex-1 bg-[#0ea5e9] hover:bg-[#0284c7] text-white font-bold py-3.5 px-6 rounded-2xl text-center transition flex items-center justify-center gap-2 shadow-md shadow-sky-200">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                        اتصل الآن (0540641082)
+                    </a>
+                    <a href="https://wa.me/966540641082?text=مرحباً، أرغب في حجز موعد صيانة مكيفات أو غسالات." target="_blank" class="flex-1 bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-3.5 px-6 rounded-2xl text-center transition flex items-center justify-center gap-2 shadow-md shadow-emerald-100">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                        واتساب مباشر
+                    </a>
+                </div>
+            </div>
+
+            <!-- Trust Metrics Bento Card -->
+            <div class="md:col-span-4 grid grid-cols-2 gap-4">
+                <div class="bg-white rounded-3xl p-5 border border-sky-100 flex flex-col justify-center items-center text-center shadow-sm">
+                    <span class="text-2xl md:text-3xl font-black text-[#0ea5e9]">1.1k+</span>
+                    <span class="text-xs text-slate-500 mt-1">عميل راضٍ بالرياض</span>
+                </div>
+                <div class="bg-white rounded-3xl p-5 border border-sky-100 flex flex-col justify-center items-center text-center shadow-sm">
+                    <span class="text-2xl md:text-3xl font-black text-[#0ea5e9]">1M+</span>
+                    <span class="text-xs text-slate-500 mt-1">تقييم ومشاهدة للخدمة</span>
+                </div>
+                <div class="bg-white rounded-3xl p-5 border border-sky-100 flex flex-col justify-center items-center text-center shadow-sm">
+                    <span class="text-xl md:text-2xl font-black text-emerald-600">30-45د</span>
+                    <span class="text-xs text-slate-500 mt-1">وصول سريع لكافة الأحياء</span>
+                </div>
+                <div class="bg-white rounded-3xl p-5 border border-sky-100 flex flex-col justify-center items-center text-center shadow-sm">
+                    <span class="text-xl md:text-2xl font-black text-[#0c4a6e]">100%</span>
+                    <span class="text-xs text-slate-500 mt-1">ضمان معتمد قطع وصيانة</span>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- ================= CORE SERVICES SECTION ================= -->
+        <section class="space-y-4">
+            <div class="text-center max-w-xl mx-auto mb-6">
+                <h2 class="text-xl md:text-2xl font-bold">خدماتنا الاحترافية بالرياض</h2>
+                <p class="text-slate-500 text-sm mt-1">فريق فني متخصص بخبرة طويلة لتوفير أقصى درجات الراحة لمنزلك</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                
+                <!-- Service Card 1: AC Repair -->
+                <div class="bg-white rounded-3xl p-6 md:p-8 border border-sky-100 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <!-- Image Container with Realistic Placeholder / Illustration Style -->
+                        <div class="w-full h-48 rounded-2xl bg-gradient-to-br from-sky-100 to-sky-200 mb-6 overflow-hidden relative flex items-center justify-center">
+                            <div class="absolute inset-0 bg-cover bg-center opacity-90" style="background-image: url('https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=600&auto=format&fit=crop');"></div>
+                            <div class="absolute inset-0 bg-gradient-to-t from-[#0c4a6e]/60 to-transparent"></div>
+                            <span class="relative z-10 text-white font-bold bg-[#0c4a6e]/70 px-4 py-1.5 rounded-xl text-sm backdrop-blur-sm">
+                                فني تكييف محترف
+                            </span>
+                        </div>
+
+                        <h3 class="text-lg md:text-xl font-bold mb-3 text-[#0c4a6e]">صيانة وتصليح جميع أنواع المكيفات</h3>
+                        
+                        <ul class="space-y-2.5 mb-6 text-sm text-slate-600">
+                            <li class="flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-[#0ea5e9]"></span>
+                                صيانة مكيفات اسليت، شباك، ومركزية باحترافية تامة.
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-[#0ea5e9]"></span>
+                                تعبئة غاز الفريون الأمريكي الأصلي (R410A / R22).
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-[#0ea5e9]"></span>
+                                فحص وعلاج التنسيم وكشف تسريب الغاز بدقة.
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-[#0ea5e9]"></span>
+                                غسيل بضغط الماء وتعقيم الوحدات بالكامل دون فوضى.
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="grid grid-cols-3 gap-2 pt-4 border-t border-slate-100">
+                        <a href="#booking-form" class="bg-sky-50 hover:bg-sky-100 text-[#0c4a6e] font-semibold py-2.5 rounded-xl text-center text-xs md:text-sm transition">طلب الخدمة</a>
+                        <a href="https://wa.me/966540641082?text=أرغب في الاستفسار عن صيانة مكيفات" target="_blank" class="bg-emerald-50 hover:bg-emerald-100 text-emerald-700 font-semibold py-2.5 rounded-xl text-center text-xs md:text-sm transition">واتساب</a>
+                        <a href="tel:0540641082" class="bg-[#0ea5e9] hover:bg-[#0284c7] text-white font-semibold py-2.5 rounded-xl text-center text-xs md:text-sm transition">اتصال</a>
+                    </div>
+                </div>
+
+                <!-- Service Card 2: Washing Machine & Appliance Repair -->
+                <div class="bg-white rounded-3xl p-6 md:p-8 border border-sky-100 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <!-- Image Container -->
+                        <div class="w-full h-48 rounded-2xl bg-gradient-to-br from-sky-100 to-sky-200 mb-6 overflow-hidden relative flex items-center justify-center">
+                            <div class="absolute inset-0 bg-cover bg-center opacity-90" style="background-image: url('https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=600&auto=format&fit=crop');"></div>
+                            <div class="absolute inset-0 bg-gradient-to-t from-[#0c4a6e]/60 to-transparent"></div>
+                            <span class="relative z-10 text-white font-bold bg-[#0c4a6e]/70 px-4 py-1.5 rounded-xl text-sm backdrop-blur-sm">
+                                فني أجهزة منزلية
+                            </span>
+                        </div>
+
+                        <h3 class="text-lg md:text-xl font-bold mb-3 text-[#0c4a6e]">صيانة وتصليح الغسالات والأجهزة المنزلية</h3>
+                        
+                        <ul class="space-y-2.5 mb-6 text-sm text-slate-600">
+                            <li class="flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-[#0ea5e9]"></span>
+                                إصلاح الغسالات العادية والأوتوماتيكية بالكامل.
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-[#0ea5e9]"></span>
+                                حل مشاكل التصريف، العصر، والأصوات المزعجة.
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-[#0ea5e9]"></span>
+                                شحن غاز الثلاجات والفريزرات بدقة عالية.
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-[#0ea5e9]"></span>
+                                إصلاح اللوحات الإلكترونية (الكروت) والمحركات.
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="grid grid-cols-3 gap-2 pt-4 border-t border-slate-100">
+                        <a href="#booking-form" class="bg-sky-50 hover:bg-sky-100 text-[#0c4a6e] font-semibold py-2.5 rounded-xl text-center text-xs md:text-sm transition">طلب الخدمة</a>
+                        <a href="https://wa.me/966540641082?text=أرغب في الاستفسار عن صيانة الغسالات والأجهزة" target="_blank" class="bg-emerald-50 hover:bg-emerald-100 text-emerald-700 font-semibold py-2.5 rounded-xl text-center text-xs md:text-sm transition">واتساب</a>
+                        <a href="tel:0540641082" class="bg-[#0ea5e9] hover:bg-[#0284c7] text-white font-semibold py-2.5 rounded-xl text-center text-xs md:text-sm transition">اتصال</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ================= QUICK ONLINE BOOKING BOX ================= -->
+        <section id="booking-form" class="bg-white rounded-3xl p-6 md:p-10 border border-sky-100 shadow-sm relative overflow-hidden">
+            <div class="absolute bottom-0 right-0 w-48 h-48 bg-sky-50 rounded-full blur-3xl -z-10"></div>
+            
+            <div class="max-w-2xl mx-auto">
+                <div class="text-center mb-8">
+                    <span class="bg-sky-100 text-[#0c4a6e] text-xs font-bold px-3 py-1.5 rounded-full">حجز فوري سريع</span>
+                    <h2 class="text-xl md:text-2xl font-bold mt-2">صندوق طلب الصيانة الفوري</h2>
+                    <p class="text-slate-500 text-sm mt-1">املأ البيانات أدناه وسنتواصل معك فوراً لتأكيد الموعد وإرسال الفني</p>
+                </div>
+
+                <!-- Success Banner (Hidden by default) -->
+                <div id="success-banner" class="hidden bg-emerald-50 border border-emerald-200 text-emerald-800 p-4 rounded-2xl mb-6 text-center text-sm font-semibold animate-fade-in">
+                    ✅ تم تجهيز طلبك بنجاح! جاري تحويلك الآن لإتمام الإرسال عبر الواتساب أو البريد...
+                </div>
+
+                <form id="serviceBookingForm" class="space-y-4">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1.5">الاسم الكريم</label>
+                            <input type="text" id="custName" required placeholder="أدخل اسمك الكريم" class="w-full bg-slate-50 border border-slate-200 rounded-2xl px-4 py-3 text-sm focus:outline-none focus:border-[#0ea5e9]">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1.5">رقم الجوال</label>
+                            <input type="tel" id="custPhone" required placeholder="05xxxxxxxx" class="w-full bg-slate-50 border border-slate-200 rounded-2xl px-4 py-3 text-sm focus:outline-none focus:border-[#0ea5e9]" dir="ltr" style="text-align: right;">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1.5">الحي بالرياض</label>
+                            <input type="text" id="custDistrict" required placeholder="مثال: الملز، الياسمين، الصحافة..." class="w-full bg-slate-50 border border-slate-200 rounded-2xl px-4 py-3 text-sm focus:outline-none focus:border-[#0ea5e9]">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1.5">نوع الخدمة المطلوب</label>
+                            <select id="custService" class="w-full bg-slate-50 border border-slate-200 rounded-2xl px-4 py-3 text-sm focus:outline-none focus:border-[#0ea5e9]">
+                                <option value="صيانة مكيفات اسليت">صيانة مكيفات اسليت</option>
+                                <option value="صيانة مكيفات شباك أو مركزية">صيانة مكيفات شباك أو مركزية</option>
+                                <option value="تعبئة فريون مكيفات">تعبئة فريون مكيفات</option>
+                                <option value="تنظيف وغسيل مكيفات">تنظيف وغسيل مكيفات</option>
+                                <option value="صيانة غسالات وأجهزة منزلية">صيانة غسالات وأجهزة منزلية</option>
+                                <option value="أخرى / فحص عام">أخرى / فحص عام</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 mb-1.5">تفاصيل العطل أو ملاحظات إضافية</label>
+                        <textarea id="custNotes" rows="3" placeholder="اكتب وصفاً مختصراً للمشكلة أو الأعراض..." class="w-full bg-slate-50 border border-slate-200 rounded-2xl p-4 text-sm focus:outline-none focus:border-[#0ea5e9]"></textarea>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+                        <button type="button" onclick="submitViaWhatsApp()" class="bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-3.5 px-6 rounded-2xl text-center transition flex items-center justify-center gap-2 shadow-sm text-sm">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                            إرسال الطلب عبر الواتساب
+                        </button>
+                        <button type="button" onclick="submitViaEmail()" class="bg-[#0ea5e9] hover:bg-[#0284c7] text-white font-bold py-3.5 px-6 rounded-2xl text-center transition flex items-center justify-center gap-2 shadow-sm text-sm">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                            إرسال عبر البريد الإلكتروني
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- ================= FOOTER ================= -->
+        <footer class="bg-white rounded-3xl p-6 md:p-8 border border-sky-100 shadow-sm text-center md:text-right flex flex-col md:flex-row justify-between items-center gap-6">
+            <div>
+                <h3 class="font-black text-lg text-[#0c4a6e] mb-1">مركز الأحد للتبريد والتكييف</h3>
+                <p class="text-slate-500 text-xs">الرياض، المملكة العربية السعودية | خدمة طوارئ 24 ساعة</p>
+                <p class="text-slate-400 text-xs mt-1">تغطية شاملة لكافة أحياء الرياض (شمال، شرق، وسط وجنوب الرياض)</p>
+            </div>
+            
+            <div class="flex flex-col items-center md:items-end gap-1 text-xs text-slate-500">
+                <p>البريد الإلكتروني: <span dir="ltr">www.shilimehar579@gmail.com</span></p>
+                <p>الهاتف المباشر: <span dir="ltr">0540641082</span></p>
+                <p class="mt-2 text-[11px] text-slate-400">© 2026 مركز الأحد للتبريد والتكييف. جميع الحقوق محفوظة.</p>
+            </div>
+        </footer>
+
+    </main>
+
+    <!-- ================= STICKY BOTTOM ACTION DOCK (Mobile) ================= -->
+    <div class="fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-md border-t border-sky-100 p-3 md:hidden flex gap-3 z-50 shadow-lg">
+        <a href="tel:0540641082" class="flex-1 bg-[#0ea5e9] text-white font-bold py-3 px-4 rounded-2xl text-center text-sm flex items-center justify-center gap-2 shadow-sm">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            اتصل الآن
+        </a>
+        <a href="https://wa.me/966540641082?text=مرحباً، أرغب في حجز موعد صيانة." target="_blank" class="flex-1 bg-emerald-500 text-white font-bold py-3 px-4 rounded-2xl text-center text-sm flex items-center justify-center gap-2 shadow-sm">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+            واتساب
+        </a>
+    </div>
+
+    <!-- JavaScript Interactive Logic -->
+    <script>
+        function getFormData() {
+            const name = document.getElementById('custName').value.trim();
+            const phone = document.getElementById('custPhone').value.trim();
+            const district = document.getElementById('custDistrict').value.trim();
+            const service = document.getElementById('custService').value;
+            const notes = document.getElementById('custNotes').value.trim();
+
+            if (!name || !phone || !district) {
+                alert('الرجاء إكمال الحقول الأساسية (الاسم، الجوال، والحัย).');
+                return null;
             }
+            return { name, phone, district, service, notes };
+        }
+
+        function showBanner() {
+            const banner = document.getElementById('success-banner');
+            banner.classList.remove('hidden');
+            setTimeout(() => {
+                banner.classList.add('hidden');
+            }, 5000);
+        }
+
+        function submitViaWhatsApp() {
+            const data = getFormData();
+            if (!data) return;
+
+            const message = `مرحباً، أرغب في طلب صيانة من مركز الأحد:%0a` +
+                            `*الاسم:* ${data.name}%0a` +
+                            `*الجوال:* ${data.phone}%0a` +
+                            `*الحي:* ${data.district}%0a` +
+                            `*الخدمة:* ${data.service}%0a` +
+                            `*ملاحظات:* ${data.notes || 'لا توجد'}`;
+
+            showBanner();
+            setTimeout(() => {
+                window.open(`https://wa.me/966540641082?text=${message}`, '_blank');
+            }, 1000);
+        }
+
+        function submitViaEmail() {
+            const data = getFormData();
+            if (!data) return;
+
+            const subject = encodeURIComponent(`طلب صيانة جديد من: ${data.name}`);
+            const body = encodeURIComponent(
+                `تفاصيل طلب الصيانة:\n\n` +
+                `الاسم الكريم: ${data.name}\n` +
+                `رقم الجوال: ${data.phone}\n` +
+                `الحي بالرياض: ${data.district}\n` +
+                `نوع الخدمة: ${data.service}\n` +
+                `تفاصيل العطل: ${data.notes || 'لا توجد'}\n\n` +
+                `---\nمرسل عبر موقع مركز الأحد للتبريد والتكييف`
+            );
+
+            showBanner();
+            setTimeout(() => {
+                window.location.href = `mailto:www.shilimehar579@gmail.com?subject=${subject}&body=${body}`;
+            }, 1000);
         }
     </script>
 </body>
