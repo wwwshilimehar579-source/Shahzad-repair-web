@@ -6,20 +6,13 @@
     <title>مركز الأحد للتبريد والتكييف | صيانة مكيفات وغسالات بالرياض</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <!-- Google Fonts: Cairo & Tajawal -->
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Cairo', 'Tajawal', sans-serif;
             background-color: #f0f9ff;
             color: #0c4a6e;
-        }
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-6px); }
-        }
-        .animate-float {
-            animation: float 4s ease-in-out infinite;
         }
         .card-hover {
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -32,206 +25,210 @@
 </head>
 <body class="bg-[#f0f9ff] text-[#0c4a6e] antialiased selection:bg-[#0ea5e9] selection:text-white pb-24 md:pb-0">
 
-    <!-- Top Emergency Bar -->
-    <div class="bg-gradient-to-r from-[#0c4a6e] via-[#0284c7] to-[#0c4a6e] text-white py-2.5 px-4 text-center text-xs md:text-sm font-bold flex items-center justify-center gap-2 shadow-sm relative overflow-hidden">
+    <!-- Top Bar -->
+    <div class="bg-gradient-to-r from-[#0c4a6e] via-[#0284c7] to-[#0c4a6e] text-white py-2.5 px-4 text-center text-xs md:text-sm font-bold flex items-center justify-center gap-2 shadow-sm">
         <span class="inline-block w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping"></span>
-        <span class="animate-pulse">خدمة طوارئ وصيانة فورية 24 ساعة في جميع أحياء الرياض | وصول فوري خلال 30 دقيقة</span>
+        <span>متاح الآن 24/7: طاقم فني متجول في كافة أحياء الرياض</span>
     </div>
 
     <!-- Main Container -->
-    <main class="max-w-6xl mx-auto px-4 py-6 md:py-10 space-y-8">
+    <main class="max-w-4xl mx-auto px-4 py-6 space-y-8">
 
-        <!-- ================= HERO SECTION ================= -->
-        <section class="grid grid-cols-1 md:grid-cols-12 gap-6">
+        <!-- Header Section -->
+        <header class="bg-white rounded-3xl p-6 shadow-sm border border-sky-100 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-center md:text-right">
+                <span class="text-xs text-sky-600 font-bold bg-sky-50 px-3 py-1 rounded-full border border-sky-100">Al Ahad Cooling Centre — الرياض</span>
+                <h1 class="text-2xl md:text-3xl font-black text-[#0c4a6e] mt-2">مركز الأحد للتبريد والتكييف</h1>
+                <p class="text-slate-500 text-xs mt-1">خدمة فورية واحترافية لكافة الأجهزة المنزلية</p>
+            </div>
+            <div class="flex items-center gap-3">
+                <a href="tel:0540641082" class="bg-[#0ea5e9] hover:bg-[#0284c7] text-white font-bold py-3 px-6 rounded-2xl text-sm transition shadow-md shadow-sky-200 flex items-center gap-2">
+                    <span>0540641082</span>
+                </a>
+                <a href="https://wa.me/966540641082" target="_blank" class="w-12 h-12 bg-emerald-500 hover:bg-emerald-600 text-white rounded-2xl flex items-center justify-center shadow-md transition">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                </a>
+            </div>
+        </header>
+
+        <!-- Intro Banner -->
+        <section class="bg-white rounded-3xl p-6 md:p-8 shadow-sm border border-sky-100 text-center space-y-6 card-hover">
+            <div class="flex justify-center gap-2 flex-wrap">
+                <span class="bg-sky-50 text-sky-700 text-xs font-bold px-3.5 py-1.5 rounded-full border border-sky-100">📍 خدمة تغطي كافة أحياء الرياض</span>
+                <span class="bg-amber-50 text-amber-700 text-xs font-bold px-3.5 py-1.5 rounded-full border border-amber-100">⭐ تقييم 4.9 ★ فنيون خبراء</span>
+            </div>
             
-            <div class="md:col-span-8 bg-white rounded-3xl p-6 md:p-10 shadow-sm border border-sky-100 flex flex-col justify-between relative overflow-hidden card-hover">
-                <div class="absolute -top-10 -left-10 w-40 h-40 bg-sky-100/50 rounded-full blur-3xl -z-10 animate-pulse"></div>
-                
-                <div>
-                    <span class="inline-block bg-sky-100 text-[#0c4a6e] font-black text-xs px-3.5 py-1.5 rounded-full mb-4 shadow-2xs animate-bounce">
-                        ⭐ الخيار الأول والأكثر موثوقية في الرياض
-                    </span>
-                    <h1 class="text-2xl md:text-4xl font-black leading-snug md:leading-tight mb-4">
-                        مركز الأحد لصيانة المكيفات والغسالات بأعلى جودة وأسرع استجابة بالرياض
-                    </h1>
-                    <p class="text-slate-600 text-sm md:text-base leading-relaxed mb-6 font-medium">
-                        نقدم حلولاً متكاملة لصيانة وتنظيف المكيفات بجميع أنواعها وإصلاح الغسالات والأجهزة المنزلية بدقة واحترافية عالية بأيدي نخبة من الفنيين المحترفين.
-                    </p>
-                </div>
+            <h2 class="text-2xl md:text-3xl font-black text-[#0c4a6e] leading-tight">
+                مركز الأحد لصيانة المكيفات والغسالات بأعلى جودة وأسرع استجابة بالرياض
+            </h2>
+            
+            <p class="text-slate-600 text-sm max-w-2xl mx-auto font-medium leading-relaxed">
+                فريق فني متمرس ومجهز لخدمتك في منزلك فوراً. صيانة مكيفات سبليت وشباك، تعبئة فريون أمريكي، تنظيف وتعقيم، وتصليح جميع أنواع الغسالات مع الضمان المعتمد.
+            </p>
 
-                <div class="flex flex-col sm:flex-row gap-3 pt-4 border-t border-slate-100">
-                    <a href="tel:0540641082" class="flex-1 bg-[#0ea5e9] hover:bg-[#0284c7] text-white font-bold py-3.5 px-6 rounded-2xl text-center transition duration-300 transform hover:scale-102 flex items-center justify-center gap-2 shadow-md shadow-sky-200">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-                        اتصل الآن (0540641082)
-                    </a>
-                    <a href="https://wa.me/966540641082?text=مرحباً، أرغب في حجز موعد صيانة مكيفات أو غسالات." target="_blank" class="flex-1 bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-3.5 px-6 rounded-2xl text-center transition duration-300 transform hover:scale-102 flex items-center justify-center gap-2 shadow-md shadow-emerald-100">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-                        واتساب مباشر
-                    </a>
+            <!-- Metrics Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3 pt-4 border-t border-slate-100">
+                <div class="bg-sky-50/50 p-4 rounded-2xl border border-sky-100 text-center">
+                    <span class="block text-xl font-black text-[#0ea5e9]">+1.1k</span>
+                    <span class="text-xs text-slate-500 font-bold">عميل راضٍ بالرياض</span>
                 </div>
-            </div>
-
-            <!-- Trust Metrics -->
-            <div class="md:col-span-4 grid grid-cols-2 gap-4">
-                <div class="bg-white rounded-3xl p-5 border border-sky-100 flex flex-col justify-center items-center text-center shadow-sm card-hover animate-float">
-                    <span class="text-2xl md:text-3xl font-black text-[#0ea5e9]">1.1k+</span>
-                    <span class="text-xs text-slate-500 mt-1 font-bold">عميل راضٍ بالرياض</span>
+                <div class="bg-sky-50/50 p-4 rounded-2xl border border-sky-100 text-center">
+                    <span class="block text-xl font-black text-[#0ea5e9]">+1M</span>
+                    <span class="text-xs text-slate-500 font-bold">تقييم ومشاهدة للخدمة</span>
                 </div>
-                <div class="bg-white rounded-3xl p-5 border border-sky-100 flex flex-col justify-center items-center text-center shadow-sm card-hover">
-                    <span class="text-2xl md:text-3xl font-black text-[#0ea5e9]">1M+</span>
-                    <span class="text-xs text-slate-500 mt-1 font-bold">تقييم ومشاهدة للخدمة</span>
+                <div class="bg-sky-50/50 p-4 rounded-2xl border border-sky-100 text-center">
+                    <span class="block text-xl font-black text-emerald-600">30-45</span>
+                    <span class="text-xs text-slate-500 font-bold">دقيقة وقت الوصول</span>
                 </div>
-                <div class="bg-white rounded-3xl p-5 border border-sky-100 flex flex-col justify-center items-center text-center shadow-sm card-hover">
-                    <span class="text-xl md:text-2xl font-black text-emerald-600">30-45د</span>
-                    <span class="text-xs text-slate-500 mt-1 font-bold">وصول سريع لكافة الأحياء</span>
-                </div>
-                <div class="bg-white rounded-3xl p-5 border border-sky-100 flex flex-col justify-center items-center text-center shadow-sm card-hover animate-float" style="animation-delay: 2s;">
-                    <span class="text-xl md:text-2xl font-black text-[#0c4a6e]">100%</span>
-                    <span class="text-xs text-slate-500 mt-1 font-bold">ضمان معتمد قطع وصيانة</span>
+                <div class="bg-sky-50/50 p-4 rounded-2xl border border-sky-100 text-center">
+                    <span class="block text-xl font-black text-[#0c4a6e]">100%</span>
+                    <span class="text-xs text-slate-500 font-bold">ضمان قطع وإصلاح</span>
                 </div>
             </div>
 
-        </section>
-
-        <!-- ================= CORE SERVICES SECTION ================= -->
-        <section class="space-y-4">
-            <div class="text-center max-w-xl mx-auto mb-6">
-                <h2 class="text-xl md:text-2xl font-black text-[#0c4a6e]">خدماتنا الاحترافية بالرياض</h2>
-                <p class="text-slate-500 text-sm mt-1">نخبة من الفنيين المحترفين بخبرة طويلة لضمان أفضل أداء لأجهزة منزلك</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                
-                <!-- Service Card 1: AC Repair (Guaranteed Direct Image) -->
-                <div class="bg-white rounded-3xl p-6 md:p-8 border border-sky-100 shadow-sm flex flex-col justify-between card-hover">
-                    <div>
-                        <div class="w-full h-56 rounded-2xl bg-sky-50 mb-6 overflow-hidden relative shadow-inner border border-sky-100">
-                            <!-- استخدام عنصر img حقيقي لضمان العرض الفوري والمضمون -->
-                            <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=800&auto=format&fit=crop" alt="صيانة مكيفات" class="w-full h-full object-cover transition duration-700 hover:scale-105">
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#0c4a6e]/70 via-transparent to-transparent"></div>
-                            <span class="absolute bottom-3 right-3 z-10 text-white font-bold bg-[#0c4a6e]/90 px-4 py-1.5 rounded-xl text-xs backdrop-blur-md shadow-md">
-                                🛠️ صيانة وإصلاح المكيفات باحترافية
-                            </span>
-                        </div>
-
-                        <h3 class="text-lg md:text-xl font-black mb-3 text-[#0c4a6e]">صيانة وتصليح جميع أنواع المكيفات</h3>
-                        
-                        <ul class="space-y-2.5 mb-6 text-sm text-slate-600 font-medium">
-                            <li class="flex items-center gap-2">
-                                <span class="w-2 h-2 rounded-full bg-[#0ea5e9]"></span>
-                                صيانة شاملة لمكيفات الاسليت، الشباك، والمركزية بكفاءة عالية.
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <span class="w-2 h-2 rounded-full bg-[#0ea5e9]"></span>
-                                تعبئة غاز الفريون الأمريكي الأصلي (R410A / R22) لبرودة مثالية.
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <span class="w-2 h-2 rounded-full bg-[#0ea5e9]"></span>
-                                كشف دقيق لتسريب الغاز ومعالجة مواسير النحاس بدقة متناهية.
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <span class="w-2 h-2 rounded-full bg-[#0ea5e9]"></span>
-                                غسيل بضغط الماء العميق وتعقيم الوحدات الداخلية والخارجية.
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="grid grid-cols-2 gap-2 pt-4 border-t border-slate-100">
-                        <a href="#booking-form" class="bg-sky-50 hover:bg-sky-100 text-[#0c4a6e] font-bold py-3 rounded-2xl text-center text-xs md:text-sm transition duration-300">حجز سريع</a>
-                        <a href="https://wa.me/966540641082?text=أرغب في الاستفسار عن صيانة المكيفات" target="_blank" class="bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-3 rounded-2xl text-center text-xs md:text-sm transition duration-300 shadow-sm">طلب عبر الواتساب</a>
-                    </div>
-                </div>
-
-                <!-- Service Card 2: Washing Machine Repair (Guaranteed Direct Image) -->
-                <div class="bg-white rounded-3xl p-6 md:p-8 border border-sky-100 shadow-sm flex flex-col justify-between card-hover">
-                    <div>
-                        <div class="w-full h-56 rounded-2xl bg-sky-50 mb-6 overflow-hidden relative shadow-inner border border-sky-100">
-                            <!-- استخدام عنصر img حقيقي لضمان العرض الفوري والمضمون -->
-                            <img src="https://images.unsplash.com/photo-1626806787461-102c1bfaaea1?q=80&w=800&auto=format&fit=crop" alt="صيانة غسالات" class="w-full h-full object-cover transition duration-700 hover:scale-105">
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#0c4a6e]/70 via-transparent to-transparent"></div>
-                            <span class="absolute bottom-3 right-3 z-10 text-white font-bold bg-[#0c4a6e]/90 px-4 py-1.5 rounded-xl text-xs backdrop-blur-md shadow-md">
-                                ⚡ صيانة وإصلاح الغسالات والأجهزة المنزلية
-                            </span>
-                        </div>
-
-                        <h3 class="text-lg md:text-xl font-black mb-3 text-[#0c4a6e]">صيانة وتصليح الغسالات والأجهزة المنزلية</h3>
-                        
-                        <ul class="space-y-2.5 mb-6 text-sm text-slate-600 font-medium">
-                            <li class="flex items-center gap-2">
-                                <span class="w-2 h-2 rounded-full bg-[#0ea5e9]"></span>
-                                إصلاح الغسالات العادية والأوتوماتيكية بالكامل وغسالات الصحون.
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <span class="w-2 h-2 rounded-full bg-[#0ea5e9]"></span>
-                                علاج مشاكل التصريف، العصر، والأصوات المزعجة والاهتزاز.
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <span class="w-2 h-2 rounded-full bg-[#0ea5e9]"></span>
-                                شحن غاز الثلاجات والفريزرات المنزلية بدقة متناهية.
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <span class="w-2 h-2 rounded-full bg-[#0ea5e9]"></span>
-                                صيانة اللوحات الإلكترونية (الكروت) والمحركات بضمان حقيقي.
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="grid grid-cols-2 gap-2 pt-4 border-t border-slate-100">
-                        <a href="#booking-form" class="bg-sky-50 hover:bg-sky-100 text-[#0c4a6e] font-bold py-3 rounded-2xl text-center text-xs md:text-sm transition duration-300">حجز سريع</a>
-                        <a href="https://wa.me/966540641082?text=أرغب في الاستفسار عن صيانة الغسالات" target="_blank" class="bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-3 rounded-2xl text-center text-xs md:text-sm transition duration-300 shadow-sm">طلب عبر الواتساب</a>
-                    </div>
-                </div>
-
+            <div class="flex flex-col sm:flex-row gap-3 pt-2">
+                <a href="tel:0540641082" class="flex-1 bg-[#0ea5e9] hover:bg-[#0284c7] text-white font-bold py-3.5 px-6 rounded-2xl text-center transition shadow-md shadow-sky-200">
+                    اتصل الآن مباشرة: 0540641082
+                </a>
+                <a href="https://wa.me/966540641082" target="_blank" class="flex-1 bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-3.5 px-6 rounded-2xl text-center transition shadow-md">
+                    واتساب مباشر سريع 💬
+                </a>
             </div>
         </section>
 
-        <!-- ================= COMPACT QUICK BOOKING BOX ================= -->
-        <section id="booking-form" class="bg-white rounded-3xl p-6 md:p-8 border border-sky-100 shadow-sm relative overflow-hidden max-w-md mx-auto card-hover">
-            <div class="absolute -bottom-10 -right-10 w-40 h-40 bg-sky-50 rounded-full blur-2xl -z-10 animate-pulse"></div>
-            
-            <div class="text-center mb-6">
-                <span class="bg-sky-100 text-[#0c4a6e] text-xs font-black px-3.5 py-1.5 rounded-full inline-block animate-bounce">حجز فوري سريع 🚀</span>
-                <h2 class="text-xl font-black mt-2">اطلب فني الصيانة الآن</h2>
-                <p class="text-slate-500 text-xs mt-1">أدخل بياناتك الأساسية وسيتم فتح محادثة الواتساب فوراً لإرسال الطلب</p>
+        <!-- ================= SERVICES SECTION WITH PROFESSIONAL IMAGES ================= -->
+        <section class="space-y-6">
+            <div class="text-center">
+                <span class="text-xs text-sky-600 font-bold bg-sky-50 px-3 py-1 rounded-full border border-sky-100">✨ خدماتنا المعتمدة بالرياض</span>
+                <h2 class="text-2xl font-black text-[#0c4a6e] mt-2">خدمات صيانة المكيفات والغسالات</h2>
+                <p class="text-slate-500 text-xs mt-1">فنيون خبراء ومحترفون يقدمون خدمات الفحص الفورى وتصليح جميع الأعطال بأعلى دقة وسرعة في كافة أحياء الرياض.</p>
             </div>
 
-            <form id="serviceBookingForm" class="space-y-4">
+            <!-- AC Service Card -->
+            <div class="bg-white rounded-3xl p-6 md:p-8 shadow-sm border border-sky-100 space-y-6 card-hover">
+                <!-- صورة احترافية واضحة ومضمونة للمكيفات -->
+                <div class="w-full h-64 rounded-2xl overflow-hidden relative shadow-inner border border-sky-100">
+                    <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=1000&auto=format&fit=crop" alt="صيانة المكيفات" class="w-full h-full object-cover transition duration-500 hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0c4a6e]/80 via-transparent to-transparent"></div>
+                    <span class="absolute top-4 right-4 bg-sky-600/90 text-white text-xs font-bold px-3 py-1.5 rounded-xl backdrop-blur-md">فني تكييف خبير</span>
+                    <span class="absolute bottom-4 right-4 text-white font-black text-lg drop-shadow-md">صيانة وتصليح جميع أنواع المكيفات</span>
+                </div>
+
+                <p class="text-slate-600 text-sm font-medium leading-relaxed">
+                    صيانة فورية لمكيفات سبليت وشباك ومركزي، تعبئة فريون أمريكي أصلي، كشف تسريب الغاز، وغسيل عميق بالضغط والتعقيم في كافة أحياء الرياض.
+                </p>
+
+                <div class="bg-sky-50/60 p-4 rounded-2xl border border-sky-100">
+                    <h4 class="font-black text-xs text-[#0c4a6e] mb-3">🛡️ أبرز ما يشمله العمل:</h4>
+                    <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-slate-700 font-semibold">
+                        <li class="flex items-center gap-2">✓ صيانة مكيفات سبليت وشباك ودولابي</li>
+                        <li class="flex items-center gap-2">✓ تعبئة فريون أمريكي R410A و R22</li>
+                        <li class="flex items-center gap-2">✓ كشف ومعالجة تسريب الفريون فوراً</li>
+                        <li class="flex items-center gap-2">✓ غسيل وتعقيم المكيفات بدون فوضى</li>
+                    </ul>
+                </div>
+
+                <div class="flex gap-3 pt-2">
+                    <a href="#booking-form" class="flex-1 bg-sky-50 hover:bg-sky-100 text-[#0c4a6e] font-bold py-3 rounded-xl text-center text-xs transition">طلب الخدمة الآن ←</a>
+                    <a href="https://wa.me/966540641082?text=أرغب في حجز صيانة مكيفات" target="_blank" class="w-12 h-12 bg-emerald-500 hover:bg-emerald-600 text-white rounded-xl flex items-center justify-center transition">💬</a>
+                    <a href="tel:0540641082" class="w-12 h-12 bg-[#0ea5e9] hover:bg-[#0284c7] text-white rounded-xl flex items-center justify-center transition">📞</a>
+                </div>
+            </div>
+
+            <!-- Washing Machine Service Card -->
+            <div class="bg-white rounded-3xl p-6 md:p-8 shadow-sm border border-sky-100 space-y-6 card-hover">
+                <!-- صورة احترافية واضحة ومضمونة للغسالات والأجهزة -->
+                <div class="w-full h-64 rounded-2xl overflow-hidden relative shadow-inner border border-sky-100">
+                    <img src="https://images.unsplash.com/photo-1626806787461-102c1bfaaea1?q=80&w=1000&auto=format&fit=crop" alt="صيانة الغسالات" class="w-full h-full object-cover transition duration-500 hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0c4a6e]/80 via-transparent to-transparent"></div>
+                    <span class="absolute top-4 right-4 bg-sky-600/90 text-white text-xs font-bold px-3 py-1.5 rounded-xl backdrop-blur-md">فني غسالات وأجهزة</span>
+                    <span class="absolute bottom-4 right-4 text-white font-black text-lg drop-shadow-md">صيانة وتصليح الغسالات والأجهزة المنزلية</span>
+                </div>
+
+                <p class="text-slate-600 text-sm font-medium leading-relaxed">
+                    إصلاح جميع أعطال الغسالات الأوتوماتيكية، نصف أوتوماتيك، النشافات، والثلاجات المنزلية والتجارية مع فحص دقيق واستبدال القطع التالفة بالضمان.
+                </p>
+
+                <div class="bg-sky-50/60 p-4 rounded-2xl border border-sky-100">
+                    <h4 class="font-black text-xs text-[#0c4a6e] mb-3">🛡️ أبرز ما يشمله العمل:</h4>
+                    <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-slate-700 font-semibold">
+                        <li class="flex items-center gap-2">✓ تصليح الغسالات الأوتوماتيكية والعادية</li>
+                        <li class="flex items-center gap-2">✓ إصلاح مشاكل التصريف، الطلمبة، والعصر</li>
+                        <li class="flex items-center gap-2">✓ صيانة الثلاجات والفريزرات وتعبئة الغاز</li>
+                        <li class="flex items-center gap-2">✓ فحص اللوحات والموتور مع قطع أصلية</li>
+                    </ul>
+                </div>
+
+                <div class="flex gap-3 pt-2">
+                    <a href="#booking-form" class="flex-1 bg-sky-50 hover:bg-sky-100 text-[#0c4a6e] font-bold py-3 rounded-xl text-center text-xs transition">طلب الخدمة الآن ←</a>
+                    <a href="https://wa.me/966540641082?text=أرغب في حجز صيانة غسالات" target="_blank" class="w-12 h-12 bg-emerald-500 hover:bg-emerald-600 text-white rounded-xl flex items-center justify-center transition">💬</a>
+                    <a href="tel:0540641082" class="w-12 h-12 bg-[#0ea5e9] hover:bg-[#0284c7] text-white rounded-xl flex items-center justify-center transition">📞</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= BOOKING FORM SECTION ================= -->
+        <section id="booking-form" class="bg-white rounded-3xl p-6 md:p-8 shadow-sm border border-sky-100 space-y-6 card-hover">
+            <div class="text-center">
+                <span class="text-xs text-sky-600 font-bold bg-sky-50 px-3 py-1 rounded-full border border-sky-100">🚀 حجز فوري سريع</span>
+                <h3 class="text-2xl font-black text-[#0c4a6e] mt-2">اطلب زيارة الفني لمنزلك بالرياض</h3>
+                <p class="text-slate-500 text-xs mt-1">املأ النموذج وسيقوم الفني بالتواصل معك مباشره لتأكيد موعد الزيارة والوصول في الوقت المحدد.</p>
+            </div>
+
+            <div class="bg-sky-50/50 p-4 rounded-2xl border border-sky-100 text-xs text-slate-600 space-y-1 font-semibold">
+                <p>⏱️ وصول خلال 30-45 دقيقة لأي حي</p>
+                <p>🛡️ ضمان رسمي معتمد على الإصلاح وقطع الغيار</p>
+                <p>📞 اتصال مباشر على مدار الساعة: <span dir="ltr">0540641082</span></p>
+            </div>
+
+            <form id="serviceForm" class="space-y-4">
                 <div>
-                    <label class="block text-xs font-bold text-slate-700 mb-1">الاسم الكريم</label>
-                    <input type="text" id="custName" required placeholder="أدخل اسمك الكريم" class="w-full bg-slate-50 border border-slate-200 rounded-2xl px-4 py-3 text-sm focus:outline-none focus:border-[#0ea5e9] font-medium transition duration-200 focus:bg-white">
+                    <label class="block text-xs font-bold text-slate-700 mb-1">الاسم الكريم *</label>
+                    <input type="text" id="custName" required placeholder="مثال: عبد الله السبيعي" class="w-full bg-slate-50 border border-slate-200 rounded-2xl px-4 py-3 text-sm focus:outline-none focus:border-[#0ea5e9]">
                 </div>
 
                 <div>
-                    <label class="block text-xs font-bold text-slate-700 mb-1">رقم الجوال</label>
-                    <input type="tel" id="custPhone" required placeholder="05xxxxxxxx" class="w-full bg-slate-50 border border-slate-200 rounded-2xl px-4 py-3 text-sm focus:outline-none focus:border-[#0ea5e9] font-medium transition duration-200 focus:bg-white" dir="ltr" style="text-align: right;">
+                    <label class="block text-xs font-bold text-slate-700 mb-1">رقم الجوال *</label>
+                    <input type="tel" id="custPhone" required placeholder="مثال: 05xxxxxxxx" class="w-full bg-slate-50 border border-slate-200 rounded-2xl px-4 py-3 text-sm focus:outline-none focus:border-[#0ea5e9]" dir="ltr" style="text-align: right;">
                 </div>
 
                 <div>
-                    <label class="block text-xs font-bold text-slate-700 mb-1">الحي بالرياض</label>
-                    <input type="text" id="custDistrict" required placeholder="مثال: الملز، الياسمين، الصحافة، العقيق..." class="w-full bg-slate-50 border border-slate-200 rounded-2xl px-4 py-3 text-sm focus:outline-none focus:border-[#0ea5e9] font-medium transition duration-200 focus:bg-white">
+                    <label class="block text-xs font-bold text-slate-700 mb-1">الحي بالرياض *</label>
+                    <input type="text" id="custDistrict" required placeholder="مثال: حي الياسمين، الروضة، النرجس..." class="w-full bg-slate-50 border border-slate-200 rounded-2xl px-4 py-3 text-sm focus:outline-none focus:border-[#0ea5e9]">
                 </div>
 
-                <div class="pt-2">
-                    <button type="button" onclick="submitToWhatsApp()" class="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-black py-4 px-6 rounded-2xl text-center transition duration-300 transform hover:scale-102 flex items-center justify-center gap-2 shadow-lg shadow-emerald-100 text-base cursor-pointer">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 animate-pulse" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-                        إرسال الطلب عبر الواتساب فوراً
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">الخدمة المطلوبة *</label>
+                    <select id="custService" class="w-full bg-slate-50 border border-slate-200 rounded-2xl px-4 py-3 text-sm focus:outline-none focus:border-[#0ea5e9]">
+                        <option value="صيانة مكيفات">صيانة مكيفات (سبليت / شباك)</option>
+                        <option value="صيانة غسالات">صيانة غسالات وأجهزة منزلية</option>
+                        <option value="تعبئة فريون">تعبئة فريون وصيانة عامة</option>
+                    </select>
+                </div>
+
+                <div class="pt-2 flex flex-col gap-3">
+                    <button type="button" onclick="submitToWhatsApp()" class="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-black py-4 rounded-2xl text-center transition shadow-lg shadow-emerald-100 flex items-center justify-center gap-2 cursor-pointer">
+                        <span>إرسال فوري عبر الواتساب 💬</span>
                     </button>
+                    <a href="mailto:www.shilimehar579@gmail.com" class="w-full bg-sky-500 hover:bg-sky-600 text-white font-bold py-3.5 rounded-2xl text-center transition text-sm flex items-center justify-center gap-2">
+                        <span>إرسال الطلب عبر الإيميل ✉️</span>
+                    </a>
                 </div>
             </form>
+            <p class="text-center text-[11px] text-slate-400">الإيميل الرسمي: <span dir="ltr">www.shilimehar579@gmail.com</span></p>
         </section>
 
         <!-- ================= FOOTER ================= -->
-        <footer class="bg-white rounded-3xl p-6 md:p-8 border border-sky-100 shadow-sm text-center md:text-right flex flex-col md:flex-row justify-between items-center gap-6">
+        <footer class="bg-white rounded-3xl p-6 shadow-sm border border-sky-100 text-center md:text-right flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500">
             <div>
-                <h3 class="font-black text-lg text-[#0c4a6e] mb-1">مركز الأحد للتبريد والتكييف</h3>
-                <p class="text-slate-500 text-xs font-medium">الرياض، المملكة العربية السعودية | خدمة طوارئ 24 ساعة</p>
-                <p class="text-slate-400 text-xs mt-1">تغطية شاملة لكافة أحياء الرياض</p>
+                <h4 class="font-black text-sm text-[#0c4a6e] mb-1">مركز الأحد للتبريد والتكييف</h4>
+                <p>صيانة وإصلاح المكيفات، تعبئة الفريون الأمريكي، وصيانة الغسالات والثلاجات في كافة أحياء الرياض.</p>
+                <p class="text-emerald-600 font-bold mt-1">✓ ضمان معتمد على جميع قطع الغيار والإصلاح</p>
             </div>
-            
-            <div class="flex flex-col items-center md:items-end gap-1 text-xs text-slate-500 font-medium">
-                <p>البريد الإلكتروني: <span dir="ltr">www.shilimehar579@gmail.com</span></p>
-                <p>الهاتف المباشر: <span dir="ltr">0540641082</span></p>
-                <p class="mt-2 text-[11px] text-slate-400">© 2026 مركز الأحد للتبريد والتكييف. جميع الحقوق محفوظة.</p>
+            <div class="space-y-1 text-center md:text-left">
+                <p>الجوال: <span dir="ltr">0540641082</span></p>
+                <p>البريد: <span dir="ltr">www.shilimehar579@gmail.com</span></p>
+                <p>ساعات العمل: 24 ساعة / 7 أيام</p>
             </div>
         </footer>
 
@@ -240,12 +237,10 @@
     <!-- Mobile Action Dock -->
     <div class="fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-md border-t border-sky-100 p-3 md:hidden flex gap-3 z-50 shadow-lg">
         <a href="tel:0540641082" class="flex-1 bg-[#0ea5e9] text-white font-bold py-3 px-4 rounded-2xl text-center text-sm flex items-center justify-center gap-2 shadow-sm">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-            اتصل الآن
+            <span>اتصل الآن</span>
         </a>
         <a href="https://wa.me/966540641082?text=مرحباً، أرغب في حجز موعد صيانة." target="_blank" class="flex-1 bg-emerald-500 text-white font-bold py-3 px-4 rounded-2xl text-center text-sm flex items-center justify-center gap-2 shadow-sm">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-            واتساب
+            <span>واتساب</span>
         </a>
     </div>
 
@@ -255,16 +250,18 @@
             const name = document.getElementById('custName').value.trim();
             const phone = document.getElementById('custPhone').value.trim();
             const district = document.getElementById('custDistrict').value.trim();
+            const service = document.getElementById('custService').value;
 
             if (!name || !phone || !district) {
-                alert('الرجاء تعبئة جميع الحقول المطلوبة (الاسم، الجوال، والحي).');
+                alert('الرجاء تعبئة الحقول الإجبارية (الاسم، الجوال، والحي).');
                 return;
             }
 
-            const message = `مرحباً، أرغب في طلب صيانة من مركز الأحد:%0a` +
+            const message = `مرحباً، أرغب في طلب صيانة:%0a` +
                             `*الاسم الكريم:* ${name}%0a` +
                             `*رقم الجوال:* ${phone}%0a` +
-                            `*الحي بالرياض:* ${district}`;
+                            `*الحي بالرياض:* ${district}%0a` +
+                            `*الخدمة المطلوبة:* ${service}`;
 
             window.open(`https://wa.me/966540641082?text=${message}`, '_blank');
         }
